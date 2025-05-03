@@ -108,6 +108,7 @@ Before running the project, ensure the following prerequisites are met:
     - **Reducing Image Size**: Tips for minimizing Docker image size are available [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#minimize-the-number-of-layers).
     - **Using Alpine Base Image**: Learn about using Alpine Linux as a base image [here](https://hub.docker.com/_/alpine).
     - **Temporary File Cleanup**: Best practices for cleaning up temporary files in Dockerfiles are outlined [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#clean-up-temporary-files).
+    - **colima**: Learn more about colima [here](https://github.com/abiosoft/colima)
 
 ---
 > For advanced usage or troubleshooting, review the comments in the scripts and consult the referenced documentation.

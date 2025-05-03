@@ -28,3 +28,22 @@ Kubernetes, originally developed by Google and released as an open-source projec
 
 ## Kubernetes Architecture
 ![K8S_Arch](static/images/kubernetes-cluster-architecture.svg)
+
+## References
+
+- [History of Computing](https://en.wikipedia.org/wiki/History_of_computing)
+- [Transistor](https://en.wikipedia.org/wiki/Transistor)
+- [Integrated Circuit](https://en.wikipedia.org/wiki/Integrated_circuit)
+- [Virtualization](https://en.wikipedia.org/wiki/Virtualization)
+- [IBM Mainframe](https://en.wikipedia.org/wiki/IBM_mainframe)
+- [x86 Virtualization](https://en.wikipedia.org/wiki/X86_virtualization)
+- [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor)
+- [VMware ESXi](https://www.vmware.com/products/esxi-and-esx.html)
+- [Microsoft Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/)
+- [Qemu](https://www.qemu.org/)
+- [VirtualBox](https://www.virtualbox.org/)
+- [VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
+- [Docker](https://www.docker.com/)
+- [Kubernetes](https://kubernetes.io/)
+- [Google Borg](https://en.wikipedia.org/wiki/Borg_(cluster_manager))
+- [Cloud-Native Computing](https://www.cncf.io/)
