@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Containers World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+        input, button {
+            font-size: 1em;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        async function fetchContainerName() {
+            try {
+                const response = await fetch('/hostname'); // Python app will serve this endpoint
+                const containerName = await response.text();
+                document.getElementById("containerName").innerText = `Running on container: ${containerName}`;
+            } catch (error) {
+                console.error('Error fetching container name:', error);
+            }
+        }
+
+        function showWelcomeMessage() {
+            const userName = document.getElementById("userName").value;
+            const containerName = document.getElementById("containerName").innerText.split(': ')[1];
+            const message = `Welcome to container ${containerName} : ${userName}`;
+            document.getElementById("welcomeMessage").innerText = message;
+        }
+
+        window.onload = fetchContainerName;
+    </script>
+</head>
+<body>
+    <h1>Welcome to Containers World!</h1>
+    <p id="containerName">Fetching container name...</p>
+    <input type="text" id="userName" placeholder="Please enter your name">
+    <button onclick="showWelcomeMessage()">Submit</button>
+    <p id="welcomeMessage" style="font-size: 1.5em; color: #555; margin-top: 20px;"></p>
+</body>
+</html>
