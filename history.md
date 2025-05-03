@@ -14,7 +14,7 @@ Virtualization emerged in the 1960s with IBM's mainframe systems, allowing multi
 
 ### Types of Hypervisors
 1. **Type 1 (Bare-Metal)**: Runs directly on hardware (e.g., VMware ESXi, Microsoft Hyper-V). 
-2. **Type 2 (Hosted)**: Runs on a host operating system (e.g., VirtualBox, VMware Workstation).
+2. **Type 2 (Hosted)**: Runs on a host operating system (e.g., Qemu, VirtualBox, VMware Workstation).
 ![virtualization](static/images/type1-2-hypervisors.png)
 
 
