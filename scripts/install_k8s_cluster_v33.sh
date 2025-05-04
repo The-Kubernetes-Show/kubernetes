@@ -458,8 +458,9 @@ function k8s_status_all {
 	# check if nodes are running
 	declare -a StringArray=(
 	  "kubemaster01"
-	  "kubeworker01"
-	  "kubeworker02"
+# run it once only, check if master is running. re-iterating over workers is not needed.
+#	  "kubeworker01"
+#	  "kubeworker02"
 	)
 		for host in ${StringArray[@]}; do
 			get_host_state=$(multipass list | grep -Ei "${host}" | awk '{print $2}')
@@ -481,7 +482,7 @@ function k8s_status_all {
 				echo -e "\n-------------------------------------------------"
 				echo -e "\nWaiting for pods to be ready in cilium-test namespace"
 				echo -e "\n-------------------------------------------------"
-				multipass exec -n kubemaster01 -- sudo bash -c 'kubectl wait pod --all --for=condition=Ready --namespace=cilium-test && kubectl -n cilium-test get pods -o wide'
+				multipass exec -n kubemaster01 -- sudo bash -c 'kubectl wait pod --all --for=condition=Ready --timeout=120s --namespace=cilium-test && kubectl -n cilium-test get pods -o wide'
 				echo -e "\n-------------------------------------------------"
 				echo -e "\nPods are ready in cilium-test namespace, doing cleanup now"
 				echo -e "\n-------------------------------------------------"
@@ -490,6 +491,8 @@ function k8s_status_all {
 				echo -e "\nWaiting for pods to be deleted along with cilium-test namespace. timeout is 120s"
 				echo -e "\n-------------------------------------------------"
 				multipass exec -n kubemaster01 -- sudo bash -c 'kubectl -n cilium-test wait  pods --for=delete  --timeout=120s --all && kubectl get pods -A'
+				echo -e "\n-------------------------------------------------"
+				multipass exec -n kubemaster01 -- sudo bash -c 'cilium status'
 				echo -e "\n-------------------------------------------------"
 				echo -e "\nNext test will check the connectivity between pods in different nodes and it takes around 15 minutes to complete"
 				echo -e "\nWould you like to run command 'cilium connectivity test' (y/n)"
@@ -664,7 +667,7 @@ case "$1" in
     $SETCOLOR_NORMAL
     ;;
   *)
-		$SETCOLOR_TITLE
+	$SETCOLOR_TITLE
     echo "Use 'help' to get help!"
     $SETCOLOR_NORMAL
     ;;
