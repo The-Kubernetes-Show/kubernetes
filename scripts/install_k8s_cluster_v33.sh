@@ -23,6 +23,7 @@ SETCOLOR_NUMBERS="echo -en \\033[0;34m" # BLUE
 # https://multipass.run/docs/installing-on-linux
 # https://multipass.run/docs/installing-on-mac
 # https://multipass.run/docs/installing-on-windows
+mkdir out 2> /dev/null && cd out
 function preinstall {
 
 	if ! which multipass > /dev/null 2>&1; then
