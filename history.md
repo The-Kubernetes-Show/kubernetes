@@ -47,3 +47,4 @@ Kubernetes, originally developed by Google and released as an open-source projec
 - [Kubernetes](https://kubernetes.io/)
 - [Google Borg](https://en.wikipedia.org/wiki/Borg_(cluster_manager))
 - [Cloud-Native Computing](https://www.cncf.io/)
+- [eBPF](https://ebpf.io/what-is-ebpf/)
