@@ -33,7 +33,9 @@ Also during the exam, you may have one and ONLY one of the following tabs open a
 
 Not sure if you have the right equipment to take the exam at home? [Run a system check](https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck)
 
-## Contents
+---
+
+### Exam Contents
 
 - [Cluster Architecture, Installation & Configuration - 25%](https://github.com/chadmcrowell/CKA-Exercises/blob/main/cluster-architecture.md)
 - [Workloads & Scheduling - 15%](https://github.com/chadmcrowell/CKA-Exercises/blob/main/scheduling.md)
@@ -43,7 +45,9 @@ Not sure if you have the right equipment to take the exam at home? [Run a system
 
 [View the most current exam curriculum](https://github.com/cncf/curriculum)
 
-## Additional Grading Information
+---
+
+### Additional Grading Information
 
 The CKA exam is graded for outcome only (i.e. end state of the system). The path that a exam taker may have taken to get to the outcome is not evaluated, meaning an exam taker can take any path they want as long as it achieves the correct outcome. Incomplete work, i.e. work that is input but did not lead to the correct outcome, will not be evaluated.
 
@@ -56,12 +60,20 @@ Scoring is done using an automatic grading script. The grading scripts have been
 ## Exam Release Cycle
 The exams are upgraded to the latest version of k8s within 4-6 weeks of the version being released.
 
+---
+
 ## References and Sources
 
 #### Kubernetes Documentation
 - [Documentation Home](https://kubernetes.io/docs/home/)
 - [kubectl Quick Reference](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/)
-####
+###
 - [Chad M. Crowell's GitHub Repository](https://github.com/chadmcrowell)
 - [Acing the Certified Kubernetes Administrator Exam - book by Chad](https://www.manning.com/books/acing-the-certified-kubernetes-administrator-exam)
+
+---
+
+> For advanced usage or troubleshooting, review the comments in the script and consult the referenced documentation.
+>
+> v1.0.0 : release date: 2025-05-18
