@@ -1,4 +1,5 @@
 # History of Computing, Virtualization, and Containers
+#### [YouTube video link](https://youtu.be/kKfLotzx-Cs)
 
 ## History of Computing
 The history of computing dates back to the early mechanical calculators of the 17th century, evolving into programmable machines in the mid-20th century. The invention of the transistor in 1947 and the development of integrated circuits in the 1960s revolutionized computing, leading to the creation of personal computers, the internet, and modern cloud computing.
