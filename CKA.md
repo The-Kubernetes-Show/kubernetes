@@ -1,5 +1,7 @@
 #  Certified Kubernetes Administrator (CKA) Exercises
 
+#### [YouTube video](https://www.youtube.com/watch?v=hPsKGywgxbM)
+
 > IMPORTANT EXAM CHANGES AFTER FEBRUARY 10th, 2025
 [Read more about the CKA exam changes after February 18th, 2025](https://github.com/chadmcrowell/CKA-Exercises/blob/main/cka-changes-2024/README.md)
 
