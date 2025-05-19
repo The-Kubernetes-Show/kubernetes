@@ -59,3 +59,8 @@ The exams are upgraded to the latest version of k8s within 4-6 weeks of the vers
 ## References and Sources
 ##### [Chad M. Crowell's GitHub Repository](https://github.com/chadmcrowell)
 ##### [Acing the Certified Kubernetes Administrator Exam - book by Chad](https://www.manning.com/books/acing-the-certified-kubernetes-administrator-exam)
+
+#### Kubernetes Documentation
+- [Documentation Home](https://kubernetes.io/docs/home/)
+- [kubectl Quick Reference](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/)
