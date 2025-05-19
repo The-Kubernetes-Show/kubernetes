@@ -1,5 +1,6 @@
 # Local Kubernetes Cluster: 3 node install using Multipass
 
+#### [YouTube video link](https://youtu.be/kKfLotzx-Cs)
 This repository provides a Bash script to automate the creation of a local Kubernetes cluster using [Multipass](https://multipass.run/). The cluster consists of one master node and two worker nodes, each provisioned with static IPs, dedicated resources, and the latest Kubernetes components.
 
 ## What is Multipass?
