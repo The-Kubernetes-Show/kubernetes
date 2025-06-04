@@ -1,0 +1,50 @@
+## Certified Kubernetes Administrator (CKA) Exam Course Outline
+
+This course outline is structured to align with the [CKA Curriculum v1.32](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.32.pdf), following the recommended topic weights and a logical learning progression from foundational to advanced concepts.
+
+---
+
+| Module | Topic | GitHub Readme Link | YouTube Video Link |
+| :-- | :-- | :-- | :-- |
+| 1. Introduction \& Kubernetes Basics | Kubernetes Architecture Overview | [GitHub link](Kubernetes_Architecture.md) | [YouTube Video 1](https://www.youtube.com/watch?v=hPsKGywgxbM) |
+|  | Cluster Components (Master, Node, etc.) | [GitHub link](Kubernetes_Architecture.md) | [YouTube Video 1](https://www.youtube.com/watch?v=hPsKGywgxbM)  |
+|  | kubectl Basics and Configuration | [GitHub Link](getting_started_with_docker.md) | [YouTube Video 2](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
+| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [GitHub Link 1](Pods_Imperative_vs_Declarative.md), [GitHub Link 2](What_Makes_Up_a_Kubernetes_Pod?.md) | [YouTube Video 3](TBD) |
+|  | ReplicaSets and Deployments |  |  |
+|  | Namespaces and Resource Isolation |  |  |
+|  | Labels, Selectors, and Annotations |  |  |
+| 3. Scheduling (15%) | Manual Pod Scheduling |  |  |
+|  | Node Selectors, Affinity, and Taints/Tolerations |  |  |
+|  | DaemonSets and Static Pods |  |  |
+| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts |  |  |
+|  | Monitoring Cluster Components |  |  |
+|  | Application Logs and Troubleshooting |  |  |
+| 5. Cluster Maintenance (11%) | Upgrading Kubernetes Components |  |  |
+|  | Backup and Restore (etcd, resources) |  |  |
+|  | Managing Certificates and Kubernetes Versions |  |  |
+| 6. Networking (20%) | Cluster Networking Model |  |  |
+|  | Services (ClusterIP, NodePort, LoadBalancer) |  |  |
+|  | Network Policies |  |  |
+|  | Ingress Controllers and Resources |  |  |
+| 7. Storage (10%) | Volumes and Persistent Volumes |  |  |
+|  | Persistent Volume Claims |  |  |
+|  | Storage Classes and Dynamic Provisioning |  |  |
+| 8. Security (12%) | Kubernetes Authentication and Authorization |  |  |
+|  | RBAC and Service Accounts |  |  |
+|  | Security Contexts and Pod Security Policies |  |  |
+|  | Network Policies for Security |  |  |
+| 9. Troubleshooting (13%) | Troubleshooting Pods and Nodes |  |  |
+|  | Troubleshooting Networking |  |  |
+|  | Troubleshooting Cluster Components |  |  |
+
+
+---
+
+- Modules are ordered from foundational to advanced, matching the natural learning curve and CKA exam blueprint.
+- Topic weights (percentages) reflect their emphasis in the official [CKA Curriculum v1.32](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.32.pdf).
+- I will be updating GitHub Readme and YouTube video links as I develop content for each topic.
+
+---
+
+External references:
+* ##### [Certified Kubernetes Administrator (CKA) Exam](CKA.md)
