@@ -9,7 +9,7 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 | 1. Introduction \& Kubernetes Basics | Kubernetes Architecture Overview | [GitHub link](Kubernetes_Architecture.md) | [YouTube Video 1](https://www.youtube.com/watch?v=hPsKGywgxbM) |
 |  | Cluster Components (Master, Node, etc.) | [GitHub link](Kubernetes_Architecture.md) | [YouTube Video 1](https://www.youtube.com/watch?v=hPsKGywgxbM)  |
 |  | kubectl Basics and Configuration | [GitHub Link](getting_started_with_docker.md) | [YouTube Video 2](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
-| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [GitHub Link 1](Pods_Imperative_vs_Declarative.md), [GitHub Link 2](What_Makes_Up_a_Kubernetes_Pod?.md) | [YouTube Video 3](TBD) |
+| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [GitHub Link 1](Pods_Imperative_vs_Declarative.md), [GitHub Link 2](What_Makes_Up_a_Kubernetes_Pod.md) | [YouTube Video 3](TBD) |
 |  | ReplicaSets and Deployments |  |  |
 |  | Namespaces and Resource Isolation |  |  |
 |  | Labels, Selectors, and Annotations |  |  |
