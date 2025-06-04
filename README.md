@@ -1,9 +1,9 @@
 # Docker and Kubernetes
 Repo contains guides and scripts for containers and Kubernetes topics.
-* ##### [How did we land into containers? - Video link inside](CKA/history.md)
-* ##### [Build a container to run a web server - Video link inside](CKA/getting_started_with_docker.md)
+* ##### [How did we land into containers? - Video link inside](CKA/Introduction_and_Basics/history.md)
+* ##### [Build a container to run a web server - Video link inside](CKA/Introduction_and_Basics/getting_started_with_docker.md)
 
-* ##### [Install 3 node kubernetes cluster with Cilium - Video link inside](CKA/multipass_install_k8s.md)
+* ##### [Install 3 node kubernetes cluster with Cilium - Video link inside](CKA/Introduction_and_Basics/multipass_install_k8s.md)
 
 ---
 
