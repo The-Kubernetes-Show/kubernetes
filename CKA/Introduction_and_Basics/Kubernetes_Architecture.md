@@ -128,10 +128,10 @@ ContainerRuntime -- hosts --> Pod2
 ```
 
 #### Visual Represenation of K8S
-![K8s_Architecture](../static/images/K8s_Architecture.png)
+![K8s_Architecture](../../static/images/K8s_Architecture.png)
 
 #### Antoher view of Kubernetes Architecture
-![K8S_Arch](../static/images/kubernetes-cluster-architecture.svg)
+![K8S_Arch](../../static/images/kubernetes-cluster-architecture.svg)
 ---
 
 ## Additional Resources

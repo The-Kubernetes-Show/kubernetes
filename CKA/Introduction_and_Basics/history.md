@@ -16,19 +16,19 @@ Virtualization emerged in the 1960s with IBM's mainframe systems, allowing multi
 ### Types of Hypervisors
 1. **Type 1 (Bare-Metal)**: Runs directly on hardware (e.g., VMware ESXi, Microsoft Hyper-V). 
 2. **Type 2 (Hosted)**: Runs on a host operating system (e.g., Qemu, VirtualBox, VMware Workstation).
-![virtualization](../static/images/type1-2-hypervisors.png)
+![virtualization](../../static/images/type1-2-hypervisors.png)
 
 
 ## Containers
 Containers, popularized by Docker in 2013, are lightweight, portable units that package applications and their dependencies. Unlike virtual machines, containers share the host OS kernel, making them faster and more efficient. They are widely used in modern DevOps workflows and microservices architectures.
-![containers](../static/images/Docker.png)
+![containers](../../static/images/Docker.png)
 
 ## Kubernetes
 Kubernetes, originally developed by Google and released as an open-source project in 2014, is a container orchestration platform designed to automate the deployment, scaling, and management of containerized applications. It was inspired by Google's internal cluster management system, Borg, and has since become the de facto standard for managing containerized workloads in cloud-native environments.
-![K8S](../static/images/k8s.png)
+![K8S](../../static/images/k8s.png)
 
 ## Kubernetes Architecture
-![K8S_Arch](../static/images/kubernetes-cluster-architecture.svg)
+![K8S_Arch](../../static/images/kubernetes-cluster-architecture.svg)
 
 ## References
 

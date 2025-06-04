@@ -1,5 +1,9 @@
 ## Certified Kubernetes Administrator (CKA) Exam Course Outline
 
+[![cka-badge](https://training.linuxfoundation.org/wp-content/uploads/2019/03/logo_cka_whitetext-300x293.png)](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)
+
+A set of exercises to help you prepare for the [Certified Kubernetes Administrator (CKA) Exam](https://www.cncf.io/certification/cka/)
+
 This course outline is structured to align with the [CKA Curriculum v1.32](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.32.pdf), following the recommended topic weights and a logical learning progression from foundational to advanced concepts.
 
 ---

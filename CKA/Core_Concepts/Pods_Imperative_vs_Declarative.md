@@ -219,7 +219,7 @@ flowchart TD
 ```
 
 #### What does a pod look like?
-![pod_anatomy_image](../static/images/pod_anatomy_image.png)
+![pod_anatomy_image](../../static/images/pod_anatomy_image.png)
 
 #### How do Pods communicate with each other?
-![Pods_in_2_nodes](../static/images/Pods_in_2_nodes.png)
+![Pods_in_2_nodes](../../static/images/Pods_in_2_nodes.png)
