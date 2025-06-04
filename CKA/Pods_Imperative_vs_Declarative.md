@@ -167,8 +167,8 @@ flowchart TD
     PodA1 -- "Pod IP (via CNI/Cluster Network)" --> PodB1
 ```
 
-#### Visual Represenation of a POD
-![pod_anatomy_image](static/images/pod_anatomy_image.png)
+#### What does a pod look like?
+![pod_anatomy_image](../static/images/pod_anatomy_image.png)
 
-#### Pods in 2 nodes
-![Pods_in_2_nodes](static/images/Pods_in_2_nodes.png)
+#### How do Pods communicate with each other?
+![Pods_in_2_nodes](../static/images/Pods_in_2_nodes.png)

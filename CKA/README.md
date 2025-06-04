@@ -47,4 +47,10 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 ---
 
 External references:
-* ##### [Certified Kubernetes Administrator (CKA) Exam](CKA.md)
+* ##### [Certified Kubernetes Administrator (CKA) Exam](cka_external_reference.md)
+
+---
+
+> For advanced usage or troubleshooting, review the comments in the script and consult the referenced documentation.
+>
+> v1.0.0 : release date: 2025-06-03

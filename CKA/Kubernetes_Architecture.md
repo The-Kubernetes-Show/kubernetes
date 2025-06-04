@@ -128,7 +128,7 @@ ContainerRuntime -- hosts --> Pod2
 ```
 
 #### Visual Represenation of K8S
-![K8s_Architecture](static/images/K8s_Architecture.png)
+![K8s_Architecture](../static/images/K8s_Architecture.png)
 
 ---
 
