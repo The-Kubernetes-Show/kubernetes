@@ -23,9 +23,47 @@ When the Pod is created, the pause container starts first and establishes the ne
 
 Kubernetes uses Linux namespaces to provide the shared context for containers within a Pod, allowing them to see and interact with each other as if they were on the same machine, while remaining isolated from containers in other Pods ([Kubernetes Pods documentation](https://kubernetes.io/docs/concepts/workloads/pods/)).
 
+To run a container on Linux, several Linux namespaces are required to provide the necessary isolation and resource partitioning. These namespaces ensure that the containerized process has its own view of system resources, separate from the host and other containers.
+
+#### Required Linux Namespaces for Containers
+
+The following namespaces are commonly used (and typically required) for running containers:
+
+- **Mount (`mnt`)**: Isolates the set of filesystem mount points, so containers can have their own root filesystem and mount points.
+- **Process ID (`pid`)**: Isolates the process ID number space, so processes inside the container only see other processes in the same namespace.
+- **Network (`net`)**: Gives containers their own network stack, including interfaces, IP addresses, routing tables, etc.
+- **Interprocess Communication (`ipc`)**: Isolates System V IPC and POSIX message queues, so processes inside the container can't communicate with processes outside via IPC.
+- **UTS (`uts`)**: Isolates hostname and domain name, allowing containers to have their own hostname.
+- **User (`user`)**: Allows containers to have their own user and group ID mappings, enabling user namespace remapping for security.
+- **Cgroup (`cgroup`)**: Isolates the view of cgroup hierarchies, which are used for resource limitation and accounting.
+- **Time (`time`)**: (Newer, not always enabled) Isolates system clocks, letting containers have different time settings from the host. Not all runtimes support this yet, but it's being adopted ([Datadog Security Labs](https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-2/)).
+
+Most container runtimes (like Docker, containerd, CRI-O) use at least the first six namespaces by default to provide process, filesystem, network, and user isolation ([OpenContainers Runtime Spec](https://github.com/opencontainers/runtime-spec/blob/main/config-linux.md); [Red Hat](https://www.redhat.com/en/blog/7-linux-namespaces)).
+
+##### Summary Table
+
+| Namespace | Purpose                                              |
+|-----------|------------------------------------------------------|
+| mnt       | Filesystem isolation                                 |
+| pid       | Process ID isolation                                 |
+| net       | Network stack isolation                              |
+| ipc       | IPC isolation                                        |
+| uts       | Hostname/domain isolation                            |
+| user      | User/group ID isolation                              |
+| cgroup    | Resource control isolation                           |
+| time      | (Optional) Time/clock isolation                      |
+
+##### Additional Notes on Linux namespaces
+
+- If a namespace type is not specified for a container, it will inherit the corresponding namespace from the runtime environment, which may reduce isolation ([OpenContainers Runtime Spec](https://github.com/opencontainers/runtime-spec/blob/main/config-linux.md)).
+- The combination of these namespaces is what enables containers to appear as lightweight, isolated systems on the same Linux host ([Wikipedia](https://en.wikipedia.org/wiki/Linux_namespaces)).
+
+In summary, to run a secure and isolated container, at least the mount, pid, net, ipc, uts, user, and cgroup namespaces are required. The time namespace is becoming more common but is not yet universally supported.
+
+
 ---
 
-## Kubernetes Namespaces vs. Linux Namespaces
+### Kubernetes Namespaces vs. Linux Namespaces
 
 | Feature | Linux Namespace | Kubernetes Namespace |
 | :-- | :-- | :-- |

@@ -1,4 +1,4 @@
-# Anatomy of Kubernetes Pods: Imperative vs Declarative Methods
+# Kubernetes Pods: Imperative vs Declarative Methods
 
 Kubernetes Pods are the smallest deployable units in Kubernetes, encapsulating containers and shared resources. This guide demonstrates how to create Pods with custom commands and arguments using both imperative (command-line) and declarative (YAML manifest) methods.
 
@@ -16,18 +16,53 @@ kubectl run hello-pod --image=busybox --restart=Never --command -- echo "Hello f
 
 Creates a Pod named `hello-pod` that runs the command `echo "Hello from Kubernetes"`.
 
+##### check logs and delete the pod
+```bash
+kubectl get po hello-pod
+kubectl logs hello-pod
+kubectl delete pod hello-pod
+```
+
 ### **2. Passing a Command with Arguments**
 
 ```bash
 kubectl run arg-demo --image=busybox --restart=Never --command -- printenv HOSTNAME KUBERNETES_PORT
+```
+##### check logs and delete the pod
+```bash
+kubectl get po arg-demo
+kubectl logs arg-demo
+kubectl delete pod arg-demo
 ```
 
 Runs the `printenv` command with two arguments in the container.
 
 ### **3. Generating YAML for Review**
 
+##### This will not work as expected! can you find out why?
 ```bash
 kubectl run custom-cmd --image=busybox --restart=Never --command -- echo "Hi there" --dry-run=client -o yaml
+```
+##### check logs and delete the pod
+```bash
+kubectl get pod custom-cmd
+kubectl logs custom-cmd
+kubectl delete pod custom-cmd
+```
+##### Try this one instead
+```bash
+kubectl run custom-cmd --image=busybox --restart=Never --dry-run=client -o yaml --command -- echo 'Hi there!'
+```
+
+##### send the output to a file or apply directly. e.g.
+```bash
+kubectl run custom-cmd --image=busybox --restart=Never --dry-run=client -o yaml --command -- echo 'Hi there!' | kubectl apply -f - 
+```
+
+##### check logs and delete the pod
+```bash
+kubectl logs custom-cmd
+kubectl delete pod custom-cmd
 ```
 
 Preview or save the manifest for declarative use.
@@ -39,6 +74,12 @@ Preview or save the manifest for declarative use.
 Declarative configuration uses YAML manifests to describe the desired state. Kubernetes ensures the cluster matches your specification.
 
 ### **1. Pod with Command and Arguments (YAML)**
+
+Use command to generate YAML file e.g.
+```bash
+kubectl run command-demo --image=debian --restart=OnFailure --dry-run=client -o yaml --command -- printenv HOSTNAME KUBERNETES_PORT > command-demo.yaml
+```
+or Write the YAML by hand e.g.
 
 ```yaml
 apiVersion: v1
@@ -55,6 +96,16 @@ spec:
 ```
 
 Defines a Pod that runs `printenv` with two arguments.
+
+Possible Values for `restartPolicy` are `Always`, `OnFailure`, `Never`
+
+##### How `restartPolicy` Works?
+* The policy applies to all app and [*init containers*](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/) within the Pod. 
+* [*Sidecar containers*](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/) (such as logging agents) may have their own behavior, but generally, the Pod-level `restartPolicy` governs restarts for all containers except sidecars.
+
+* If not explicitly set, the `default` is `Always` for **Pods managed by controllers like Deployments**, and **Never** for **Pods created directly** (e.g., with kubectl run --restart=Never).
+* When a container restarts, Kubernetes uses an exponential backoff strategy (10s, 20s, 40s, up to a max of 5 minutes) to avoid rapid, repeated restarts
+* [Read more on it here](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 
 ### **2. Pod with a Simple Echo Command**
 
