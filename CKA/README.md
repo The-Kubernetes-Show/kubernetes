@@ -8,14 +8,14 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 
 ---
 
-| Module | Topic | GitHub Readme Link | YouTube Video Link |
+| Module | Topic | GitHub Links | Video Link |
 | :-- | :-- | :-- | :-- |
-| 1. Introduction \& Kubernetes Basics | kubectl Basics and Configuration | [GitHub Link 1](Introduction_and_Basics/getting_started_with_docker.md),[GitHub Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [YouTube Video 1](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
-|  | Kubernetes Architecture Overview | [GitHub link](Introduction_and_Basics/Kubernetes_Architecture.md) | [YouTube Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
-|  | Cluster Components (Master, Node, etc.) | [GitHub link](Introduction_and_Basics/Kubernetes_Architecture.md) | [YouTube Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
-| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [GitHub Link](Core_Concepts/Pods_Imperative_vs_Declarative.md) | [YouTube Video 3](TBD) |
+| 1. Introduction \& Kubernetes Basics | kubectl Basics and Configuration | [Link 1](Introduction_and_Basics/getting_started_with_docker.md),[Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [Video 1](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
+|  | Kubernetes Architecture Overview | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
+|  | Cluster Components (Master, Node, etc.) | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
+| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [Link](Core_Concepts/Pods_Imperative_vs_Declarative.md) | [Video 3](TBD) |
 |  | ReplicaSets and Deployments |  |  |
-|  | Namespaces and Resource Isolation | [GitHub Link](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md) |  |
+|  | Namespaces and Resource Isolation | [Link](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md) |  |
 |  | Labels, Selectors, and Annotations |  |  |
 | 3. Scheduling (15%) | Manual Pod Scheduling |  |  |
 |  | Node Selectors, Affinity, and Taints/Tolerations |  |  |
