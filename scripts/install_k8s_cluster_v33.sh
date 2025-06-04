@@ -34,21 +34,21 @@ function preinstall {
 	fi
 
 	# Generate SSH key for VM user, we will use it for SSH connections to our VMs
-	ssh-keygen -q -N "" -t rsa -b 2048 -C "vmuser" -f ./multipass-ssh-key
+	ssh-keygen -q -N "" -t rsa -b 2048 -C "vmuser" -f ./out/multipass-ssh-key
 
 	# Generate cloud-init file for VM user and give it sudo rights
 	# also adding ssh key to authorized_keys for the VM user
 	# https://cloudinit.readthedocs.io/en/latest/topics/examples.html
-	cat << EOF > ./cloud-init.yaml
+	cat << EOF > ./out/cloud-init.yaml
 users:
   - default
   - name: vmuser
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:
-    - $(cat multipass-ssh-key.pub)
+    - $(cat ./out/multipass-ssh-key.pub)
 EOF
 	
-	# cat ./cloud-init.yaml
+	# cat ./out/cloud-init.yaml
 }
 
 # ------------------------------------------------------------
@@ -69,14 +69,14 @@ function install_kubemaster01 {
 	if [[ $? == 0 ]] && [[ ${#get_host_status} == 0 ]] && [[ $get_host_state != "Running" ]]; then
 
 		# Install a kubemaster01 host wtih 10GB disk, 3GB RAM and 2 CPUs and static IP. 
-		# Use cloud-init.yaml file
+		# Use ./out/cloud-init.yaml file
 		multipass launch \
 			--name ${host_name} \
 			--disk 10G \
 			--memory 3G \
 			--cpus 2 \
 			--network name=en0,mode=manual,mac="52:54:00:4b:ab:cd" \
-			--cloud-init cloud-init.yaml \
+			--cloud-init ./out/cloud-init.yaml \
 			noble
 	fi
 	
@@ -123,14 +123,14 @@ function install_kubeworker01 {
 	if [[ $? == 0 ]] && [[ ${#get_host_status} == 0 ]] && [[ $get_host_state != "Running" ]]; then
 
 		# Install the kubeworker01 node wtih 10GB disk, 3GB RAM and 2 CPUs and static IP.
-		# Use cloud-init.yaml file
+		# Use ./out/cloud-init.yaml file
 		multipass launch \
 			--name ${host_name} \
 			--disk 10G \
 			--memory 3G \
 			--cpus 2 \
 			--network name=en0,mode=manual,mac="52:54:00:4b:ba:dc" \
-			--cloud-init cloud-init.yaml \
+			--cloud-init ./out/cloud-init.yaml \
 			noble
 	fi
 	
@@ -177,14 +177,14 @@ function install_kubeworker02 {
 	if [[ $? == 0 ]] && [[ ${#get_host_status} == 0 ]] && [[ $get_host_state != "Running" ]]; then
 		
 		# Install the kubeworker01 node wtih 10GB disk, 3GB RAM and 2 CPUs and static IP.
-		# Use cloud-init.yaml file
+		# Use ./out/cloud-init.yaml file
 		multipass launch \
 			--name ${host_name} \
 			--disk 10G \
 			--memory 3G \
 			--cpus 2 \
 			--network name=en0,mode=manual,mac="52:54:00:4b:cd:ab" \
-			--cloud-init cloud-init.yaml \
+			--cloud-init ./out/cloud-init.yaml \
 			noble
 	fi
 	
@@ -333,18 +333,18 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}'
 	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl -n kube-system get pods && cilium status'
 
 	# create join command for workers
-	multipass exec -n kubemaster01 -- sudo bash -c 'kubeadm token create --print-join-command' > worker_join_command.sh
+	multipass exec -n kubemaster01 -- sudo bash -c 'kubeadm token create --print-join-command' > ./out/worker_join_command.sh
 	# create a copy of admin.conf as kubeconfig for workers
-	multipass exec -n kubemaster01 -- sudo bash -c 'cat /etc/kubernetes/admin.conf' > kubeconfig
+	multipass exec -n kubemaster01 -- sudo bash -c 'cat /etc/kubernetes/admin.conf' > ./out/kubeconfig
 
 
 	# Configure workers, copy join command and kubeconfig to workers and run join command
-	multipass transfer worker_join_command.sh kubeworker01:
-	multipass transfer worker_join_command.sh kubeworker02:
+	multipass transfer ./out/worker_join_command.sh kubeworker01:
+	multipass transfer ./out/worker_join_command.sh kubeworker02:
 	multipass exec -n kubeworker01 -- sudo bash -c 'bash ./worker_join_command.sh'
 	multipass exec -n kubeworker02 -- sudo bash -c 'bash ./worker_join_command.sh'
-	multipass transfer kubeconfig kubeworker01:
-	multipass transfer kubeconfig kubeworker02:
+	multipass transfer ./out/kubeconfig kubeworker01:
+	multipass transfer ./out/kubeconfig kubeworker02:
 
 	# optional but we are doing it anyway. this is not a recommended way to do it
 	multipass exec -n kubeworker01 -- sudo bash -c 'rm -rf ~/.kube && mkdir ~/.kube && mv ./kubeconfig ~/.kube/config'
@@ -391,37 +391,38 @@ function generate_context {
 	echo "Generate kube-context for local usages"
 	$SETCOLOR_NORMAL
 
- 	multipass exec -n kubemaster01 -- sudo bash -c "kubectl create clusterrolebinding cluster-admin-vmuser@kubernetes.local --user=vmuser@kubernetes.local --clusterrole='cluster-admin' --group='admins'"
+ 	multipass exec -n kubemaster01 -- sudo bash -c "kubectl create clusterrolebinding cluster-admin-vmuser@kubernetes.local --user=vmuser@kubernetes.local --clusterrole='cluster-admin' --group='admins' 2>/dev/null"
 
-	openssl genrsa -out vmuser.key 2048
-	openssl req -new -key vmuser.key -out vmuser.csr -subj "/CN=vmuser@kubernetes.local"
+	openssl genrsa -out ./out/vmuser.key 2048
+	openssl req -new -key ./out/vmuser.key -out ./out/vmuser.csr -subj "/CN=vmuser@kubernetes.local"
 
 # Create a CSR for the user
 # https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#creating-a-csr-for-a-user
 # expirationSeconds: 2592000 (30 days)
-	cat << EOF > ./vmuser-csr.yaml
+	cat << EOF > ./out/vmuser-csr.yaml
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
   name: vmuser@kubernetes.local
 spec:
-  request: $(cat ./vmuser.csr | base64)
+  request: $(cat ./out/vmuser.csr | base64)
   signerName: kubernetes.io/kube-apiserver-client
   expirationSeconds: 2592000
   usages:
   - client auth
 EOF
 # copy the CSR to the master node and sign it, get the certificate to use it in kubeconfig.
-	multipass transfer vmuser-csr.yaml kubemaster01:
+	multipass transfer ./out/vmuser-csr.yaml kubemaster01:
+	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl delete -f vmuser-csr.yaml'
 	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl create -f vmuser-csr.yaml'
 	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl certificate approve vmuser@kubernetes.local'
  	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl get csr vmuser@kubernetes.local -ojsonpath="{.status.certificate}" | base64 -d > vmuser.crt'
-	multipass transfer kubemaster01:vmuser.crt ./vmuser.crt
+	multipass transfer kubemaster01:vmuser.crt ./out/vmuser.crt
 
 	get_host_ip=$(multipass info kubemaster01 | grep IPv4 | awk '{print $2}')
 
 	kubectl config set-cluster kubernetes.local --server=https://${get_host_ip}:6443 --insecure-skip-tls-verify=true
-	kubectl config set-credentials vmuser@kubernetes.local --client-key=vmuser.key --client-certificate=vmuser.crt --username='vmuser@kubernetes.local'
+	kubectl config set-credentials vmuser@kubernetes.local --client-key=./out/vmuser.key --client-certificate=./out/vmuser.crt --username='vmuser@kubernetes.local'
  	kubectl config set-context vmuser@kubernetes.local --cluster=kubernetes.local --user=vmuser@kubernetes.local
  	kubectl config use-context vmuser@kubernetes.local
  	kubectl get ns && kubectl get po
@@ -446,9 +447,9 @@ function status_all {
 	done
 
 	echo -e "\nTo connect to host use SSH, for example: \n"
-	echo "ssh vmuser@192.168.73.101 -i ./multipass-ssh-key -o StrictHostKeyChecking=no"
-	echo "ssh vmuser@192.168.73.102 -i ./multipass-ssh-key -o StrictHostKeyChecking=no"
-	echo "ssh vmuser@192.168.73.103 -i ./multipass-ssh-key -o StrictHostKeyChecking=no"
+	echo "ssh vmuser@192.168.73.101 -i ./out/multipass-ssh-key -o StrictHostKeyChecking=no"
+	echo "ssh vmuser@192.168.73.102 -i ./out/multipass-ssh-key -o StrictHostKeyChecking=no"
+	echo "ssh vmuser@192.168.73.103 -i ./out/multipass-ssh-key -o StrictHostKeyChecking=no"
 }
 
 # ------------------------------------------------------------
