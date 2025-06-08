@@ -57,4 +57,4 @@ External references:
 
 > For advanced usage or troubleshooting, review the comments in the script and consult the referenced documentation.
 >
-> v1.0.0 : release date: 2025-06-03
+> v1.0.3 : release date: 2025-06-07
