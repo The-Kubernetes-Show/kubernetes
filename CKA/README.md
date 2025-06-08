@@ -10,10 +10,10 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 
 | Module | Topic | GitHub Links | Video Link |
 | :-- | :-- | :-- | :-- |
-| 1. Introduction \& Kubernetes Basics | kubectl Basics and Configuration | [Link 1](Introduction_and_Basics/getting_started_with_docker.md),[Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [Video 1](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
-|  | Kubernetes Architecture Overview | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
-|  | Cluster Components (Master, Node, etc.) | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2](https://www.youtube.com/watch?v=hPsKGywgxbM) |
-| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [Link](Core_Concepts/Pods_Imperative_vs_Declarative.md) | [Video 3](TBD) |
+| 1. Introduction \& Kubernetes Basics | kubectl Basics and Configuration | [Link 1](Introduction_and_Basics/getting_started_with_docker.md),[Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [Video 1 - May 3, 2025](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
+|  | Kubernetes Architecture Overview | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2 - May 18, 2025](https://www.youtube.com/watch?v=hPsKGywgxbM) |
+|  | Cluster Components (Master, Node, etc.) | [link](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2 - May 18, 2025](https://www.youtube.com/watch?v=hPsKGywgxbM) |
+| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [Link](Core_Concepts/Pods_Imperative_vs_Declarative.md) | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=LGK733Zc_6A) |
 |  | ReplicaSets and Deployments |  |  |
 |  | Namespaces and Resource Isolation | [Link](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md) |  |
 |  | Labels, Selectors, and Annotations |  |  |
