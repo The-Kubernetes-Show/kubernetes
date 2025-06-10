@@ -23,6 +23,18 @@ kubectl logs hello-pod
 kubectl delete pod hello-pod
 ```
 
+#### :star: **Exam Tip:** :star:
+
+When running `kubectl delete pod`, it waits for the Pod to gracefully terminate. This can take time, especially if the Pod is running a long process or has a defined grace period.
+
+Save time while running `delete` pod commands by using `--now` flag to delete immediately without waiting for graceful termination. or use `--grace-period=0` to skip the grace period with `--force` flag.
+
+```bash
+kubectl delete pod hello-pod --now
+kubectl delete pod hello-pod --grace-period=0 --force
+```
+
+
 ### **2. Passing a Command with Arguments**
 
 ```bash
