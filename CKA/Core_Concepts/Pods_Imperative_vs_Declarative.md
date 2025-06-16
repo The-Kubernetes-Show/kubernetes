@@ -2,6 +2,7 @@
 
 Kubernetes Pods are the smallest deployable units in Kubernetes, encapsulating containers and shared resources. This guide demonstrates how to create Pods with custom commands and arguments using both imperative (command-line) and declarative (YAML manifest) methods.
 
+## [YouTube Video](https://www.youtube.com/watch?v=7c7BOV8Ra54)
 ---
 
 ## Imperative Method
