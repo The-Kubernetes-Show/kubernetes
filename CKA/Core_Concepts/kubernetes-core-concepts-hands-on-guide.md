@@ -250,11 +250,11 @@ Namespaces allow you to partition cluster resources between multiple users or te
 ---
 
 Happy learning! 🚀
-```
 
-references:
-[1] https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
-[2] https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-[3] https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
-[4] https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
-[5] https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+
+References:
+* [kubernetes.io Replicaset](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+* [kubernetes.io deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+* [kubernetes.io namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+* [kubernetes.io labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+* [kubernetes.io annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
