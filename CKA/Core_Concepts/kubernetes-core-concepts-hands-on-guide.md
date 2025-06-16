@@ -1,6 +1,5 @@
 # Kubernetes Core Concepts: Hands-On Guide to ReplicaSets, Deployments, Namespaces, and Labels
 
-
 This guide introduces key Kubernetes concepts with hands-on examples and practical exercises. By the end, you'll be able to:
 
 - Define and deploy ReplicaSets and Deployments
@@ -112,12 +111,31 @@ A Pod is the smallest deployable unit in Kubernetes. It can contain one or more 
 
 3. Check Deployment, ReplicaSet, and Pods:
 
-    ```yaml
+    ```bash
     kubectl get deployments
     kubectl get rs
     kubectl get pods --show-labels
-    kubectl describe deployment nginx-deployment
     ```
+
+4. Describe the Deployment and use label selectors:
+
+```bash
+    kubectl describe deployment nginx-deployment
+    # label selector example
+    kubectl get pods -l app=nginx
+```
+
+5. Scale the Deployment:
+
+```bash
+    kubectl scale deployment nginx-deployment --replicas=5
+    kubectl get pods
+    kubectl get deployment nginx-deployment
+    kubectl describe deployment nginx-deployment
+    kubectl get rs
+    kubectl describe rs/nginx-deployment-xxxxx
+
+```
 
 ---
 
@@ -225,15 +243,31 @@ Namespaces allow you to partition cluster resources between multiple users or te
 
 2. List Pods with a label selector:
 
-    ```bash
+```bash
     kubectl get pods -l app=demo
-    ```
+```
 
-3. View annotations:
+3. Label a pod
 
-    ```bash
+```bash
+    kubectl label pod <pod-name> env=production
+    kubectl get pods --show-labels
+    kubectl describe pod <pod-name>
+```
+
+4. View annotations:
+
+```bash
     kubectl get pod labeled-pod -o yaml
-    ```
+```
+
+5. Create annotation on existing pod
+
+```bash
+    kubectl annotate pod labeled-pod version=1.0.0
+    kubectl get pod labeled-pod -o yaml
+    kubectl describe pod labeled-pod
+```
 
 ---
 
@@ -251,10 +285,10 @@ Namespaces allow you to partition cluster resources between multiple users or te
 
 Happy learning! 🚀
 
-
 References:
-* [kubernetes.io Replicaset](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
-* [kubernetes.io deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-* [kubernetes.io namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-* [kubernetes.io labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
-* [kubernetes.io annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
+
+- [kubernetes.io Replicaset](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+- [kubernetes.io deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+- [kubernetes.io namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+- [kubernetes.io labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+- [kubernetes.io annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
