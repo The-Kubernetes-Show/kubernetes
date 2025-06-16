@@ -235,3 +235,17 @@ flowchart TD
 
 #### How do Pods communicate with each other?
 ![Pods_in_2_nodes](../../static/images/Pods_in_2_nodes.png)
+
+---
+
+References:
+
+* [Kubernetes Pods Documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
+
+* [Kubectl Run Documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run)
+
+* [Kubernetes Networking Overview](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+
+* [Impreative vs Declarative](https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/)
+
+---
