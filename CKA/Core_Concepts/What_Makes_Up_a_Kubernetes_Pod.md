@@ -8,7 +8,7 @@ A **Kubernetes Pod** is the smallest deployable unit in Kubernetes and represent
 
 The **pause container** acts as the "parent" container for all containers within a Pod. Its primary role is to hold the network namespace for the Pod, ensuring that all containers in the Pod share the same network stack (IP address, port space, etc.). This design allows containers to communicate over `localhost` and enables Kubernetes to manage the Pod’s network lifecycle independently of the application containers.
 
-When the Pod is created, the pause container starts first and establishes the network namespace. All other containers in the Pod then join this namespace. If application containers restart, the network namespace remains intact because the pause container persists, ensuring stable networking for the Pod ([Kubernetes Architecture documentation](https://kubernetes.io/docs/concepts/architecture/)).
+When the Pod is created, the pause container starts first and establishes the network namespace. All other containers in the Pod then join this namespace. If application containers restart, the network namespace remains intact because the pause container persists, ensuring stable networking for the Pod ([Kubernetes Architecture documentation](https://kubernetes.io/docs/concepts/architecture/)). Also check `--pod-infra-container-image` on the [kubelet documentation page](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/).
 
 ---
 
