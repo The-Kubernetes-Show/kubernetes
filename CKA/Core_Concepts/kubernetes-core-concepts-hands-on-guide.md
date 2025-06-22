@@ -48,6 +48,12 @@ A Pod is the smallest deployable unit in Kubernetes. It can contain one or more 
 | Rolling Updates        | Not supported directly; requires manual intervention.                                                       | Supported natively, enabling seamless updates to application versions.                                             |
 | Rollbacks              | Not supported directly.                                                                                     | Supported, allowing easy rollback to previous versions if issues occur.                                            |
 
+---
+Reference: https://www.thomas-pk.com/kubernetes/k8-concepts/deployment.html
+
+![image](https://github.com/user-attachments/assets/6c037723-f73e-4e58-adfc-d4c2c0dfc2b9)
+
+---
 
 ### Hands-On: Creating a ReplicaSet
 
