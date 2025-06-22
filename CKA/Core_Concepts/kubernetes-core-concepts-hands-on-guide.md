@@ -34,6 +34,21 @@ A Pod is the smallest deployable unit in Kubernetes. It can contain one or more 
 
 **Deployments** provide declarative updates for Pods and ReplicaSets. They manage the rollout and rollback of application versions, making them ideal for production workloads.
 
+---
+
+| Feature                | ReplicaSet (Replicates)                                                                                     | Deployment                                                                                                         |
+|------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Purpose                | Ensures a specified number of identical pods are running at all times.                                      | Manages ReplicaSets and provides higher-level features for application lifecycle management.                       |
+| Level                  | Lower-level Kubernetes object.                                                                              | Higher-level Kubernetes object.                                                                                    |
+| Updates                | Does not support rolling updates or rollbacks directly.                                                     | Supports declarative updates, rolling updates, and rollbacks for zero-downtime deployments.                        |
+| Lifecycle Management   | Limited to maintaining pod replicas and scaling.                                                            | Manages full application lifecycle: scaling, updates, rollbacks, and history tracking.                             |
+| Usage                  | Can be used directly, but typically managed by a Deployment.                                                | Preferred method for managing stateless applications, automatically creates and manages ReplicaSets.               |
+| Self-healing           | Replaces failed pods to maintain desired replica count.                                                     | Ensures desired state is maintained and replaces failed pods, with additional management features.                  |
+| Typical Workflow       | Define ReplicaSet, specify pod template and replica count.                                                  | Define Deployment, which creates and manages ReplicaSets and pods based on desired state.                          |
+| Rolling Updates        | Not supported directly; requires manual intervention.                                                       | Supported natively, enabling seamless updates to application versions.                                             |
+| Rollbacks              | Not supported directly.                                                                                     | Supported, allowing easy rollback to previous versions if issues occur.                                            |
+
+
 ### Hands-On: Creating a ReplicaSet
 
 1. Save the following YAML as `frontend-replicaset.yaml`:
