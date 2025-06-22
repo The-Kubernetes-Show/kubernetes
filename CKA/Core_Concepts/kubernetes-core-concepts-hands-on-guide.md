@@ -49,7 +49,6 @@ A Pod is the smallest deployable unit in Kubernetes. It can contain one or more 
 | Rollbacks              | Not supported directly.                                                                                     | Supported, allowing easy rollback to previous versions if issues occur.                                            |
 
 ---
-Reference: https://www.thomas-pk.com/kubernetes/k8-concepts/deployment.html
 
 ![image](https://github.com/user-attachments/assets/6c037723-f73e-4e58-adfc-d4c2c0dfc2b9)
 
@@ -313,3 +312,4 @@ References:
 - [kubernetes.io namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 - [kubernetes.io labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 - [kubernetes.io annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
+- Image Reference: https://www.thomas-pk.com/kubernetes/k8-concepts/deployment.html
