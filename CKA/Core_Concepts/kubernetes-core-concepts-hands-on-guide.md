@@ -50,7 +50,7 @@ A Pod is the smallest deployable unit in Kubernetes. It can contain one or more 
 
 ---
 
-![image](https://github.com/user-attachments/assets/6c037723-f73e-4e58-adfc-d4c2c0dfc2b9)
+![image](/static/images/Deployment-RS-Pod-Relation.png)
 
 ---
 
@@ -312,4 +312,4 @@ References:
 - [kubernetes.io namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 - [kubernetes.io labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 - [kubernetes.io annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
-- Image Reference: https://www.thomas-pk.com/kubernetes/k8-concepts/deployment.html
+- Image Reference from: https://www.thomas-pk.com/kubernetes/k8-concepts/deployment.html
