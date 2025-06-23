@@ -4,6 +4,10 @@ A **Kubernetes Pod** is the smallest deployable unit in Kubernetes and represent
 
 ---
 
+[YouTube Video](https://www.youtube.com/watch?v=6sEiEIyr-Zc)
+
+---
+
 ## Why Is There a Pause Container?
 
 The **pause container** acts as the "parent" container for all containers within a Pod. Its primary role is to hold the network namespace for the Pod, ensuring that all containers in the Pod share the same network stack (IP address, port space, etc.). This design allows containers to communicate over `localhost` and enables Kubernetes to manage the Pod’s network lifecycle independently of the application containers.
