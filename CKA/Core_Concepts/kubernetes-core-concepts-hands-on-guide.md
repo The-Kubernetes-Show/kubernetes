@@ -8,6 +8,10 @@ This guide introduces key Kubernetes concepts with hands-on examples and practic
 
 ---
 
+[YouTube Video](https://www.youtube.com/watch?v=6sEiEIyr-Zc)
+
+---
+
 ## Table of Contents
 
 - [What Makes Up a Kubernetes Pod?](#what-makes-up-a-kubernetes-pod)
