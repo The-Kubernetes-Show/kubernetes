@@ -14,9 +14,9 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 |  | Kubernetes Architecture Overview | [Link 1](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2 - May 18, 2025](https://www.youtube.com/watch?v=hPsKGywgxbM) |
 |  | Cluster Components (Master, Node, etc.) | [Link 1](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2 - May 18, 2025](https://www.youtube.com/watch?v=hPsKGywgxbM) |
 | 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | [Link 1](Core_Concepts/Pods_Imperative_vs_Declarative.md), [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54) |
-|  | Namespaces and Resource Isolation | [Link 1](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md), [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) |  |
-|  | ReplicaSets and Deployments | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) |  |
-|  | Labels, Selectors, and Annotations | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) |  |
+|  | Namespaces and Resource Isolation | [Link 1](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md), [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc) |
+|  | ReplicaSets and Deployments | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc)  |
+|  | Labels, Selectors, and Annotations | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc)  |
 | 3. Scheduling (15%) | Manual Pod Scheduling |  |  |
 |  | Node Selectors, Affinity, and Taints/Tolerations |  |  |
 |  | DaemonSets and Static Pods |  |  |
