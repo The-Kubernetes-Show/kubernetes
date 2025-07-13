@@ -17,9 +17,9 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 |  | Namespaces and Resource Isolation | [Link 1](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md), [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc) |
 |  | ReplicaSets and Deployments | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc)  |
 |  | Labels, Selectors, and Annotations | [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc)  |
-| 3. Scheduling (15%) | Manual Pod Scheduling |  |  |
-|  | Node Selectors, Affinity, and Taints/Tolerations |  |  |
-|  | DaemonSets and Static Pods |  |  |
+| 3. Scheduling (15%) | Manual Pod Scheduling | [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](TBD) |
+|  | Node Selectors, Affinity, and Taints/Tolerations | [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](TBD) |
+|  | DaemonSets and Static Pods | [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](TBD) |
 | 4. Logging \& Monitoring (10%) | Cluster Logging Concepts |  |  |
 |  | Monitoring Cluster Components |  |  |
 |  | Application Logs and Troubleshooting |  |  |
