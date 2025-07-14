@@ -1,6 +1,6 @@
 # Kubernetes Pod Scheduling and Placement
 
-[YouTube Video](TBD)
+#### [YouTube video link](https://youtu.be/quIx23Vq8W0)
 
 This document covers Kubernetes Pod Scheduling and Placement, which is part of the Certified Kubernetes Administrator (CKA) exam curriculum. It explores key concepts, practical examples, and hands-on exercises for mastering Pod scheduling techniques, focusing on manual scheduling, node selection strategies, and specialized Pod deployments. The content aligns with the CKA exam's scheduling section (15%), covering manual Pod scheduling, Node Selectors, Affinity, and Taints/Tolerations, as well as DaemonSets and Static Pods.
 
