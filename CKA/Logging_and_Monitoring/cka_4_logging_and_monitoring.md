@@ -8,7 +8,7 @@
 
 ---
 
-[YouTube Video](TBD)
+[YouTube Video](https://youtu.be/9W2GQVOkCKI)
 
 ---
 

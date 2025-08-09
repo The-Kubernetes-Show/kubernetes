@@ -20,7 +20,7 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 | 3. Scheduling (15%) | Manual Pod Scheduling | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
 |  | Node Selectors, Affinity, and Taints/Tolerations | ✅ | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
 |  | DaemonSets and Static Pods | ✅ | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
-| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts | ✅ [Link 1](Logging_and_Monitoring/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](TBD) |
+| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts | ✅ [Link 1](Logging_and_Monitoring/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
 |  | Monitoring Cluster Components | ✅ | ✅ |
 |  | Application Logs and Troubleshooting | ✅ | ✅ |
 | 5. Cluster Maintenance (11%) | Upgrading Kubernetes Components |  |  |
