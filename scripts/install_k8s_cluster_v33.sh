@@ -245,9 +245,7 @@ function configure_k8s_cluster {
 	# install kubeadm, kubelet and kubectl
 	# configure crictl to work with containerd
 	for host in ${StringArray[@]}; do
-		multipass exec -n ${host} -- sudo bash -c 'echo "192.168.73.101 kubemaster01" >> /etc/hosts'
-		multipass exec -n ${host} -- sudo bash -c 'echo "192.168.73.102 kubeworker01" >> /etc/hosts'
-		multipass exec -n ${host} -- sudo bash -c 'echo "192.168.73.103 kubeworker02" >> /etc/hosts'
+		multipass exec -n ${host} -- sudo bash -c 'echo -e "192.168.73.101 kubemaster01\n192.168.73.102 kubeworker01\n192.168.73.103 kubeworker02" >> /etc/hosts'
 
 		multipass exec -n ${host} -- sudo bash -c 'echo "overlay" >> /etc/modules-load.d/k8s.conf'
 		multipass exec -n ${host} -- sudo bash -c 'echo "br_netfilter" >> /etc/modules-load.d/k8s.conf'
@@ -413,7 +411,7 @@ spec:
 EOF
 # copy the CSR to the master node and sign it, get the certificate to use it in kubeconfig.
 	multipass transfer ./out/vmuser-csr.yaml kubemaster01:
-	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl delete -f vmuser-csr.yaml'
+	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl delete -f vmuser-csr.yaml > /dev/null 2>&1'
 	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl create -f vmuser-csr.yaml'
 	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl certificate approve vmuser@kubernetes.local'
  	multipass exec -n kubemaster01 -- sudo bash -c 'kubectl get csr vmuser@kubernetes.local -ojsonpath="{.status.certificate}" | base64 -d > vmuser.crt'
@@ -525,6 +523,8 @@ function start_all {
 
 		if [[ "$get_host_state" =~ ^(Stopped|Suspended)$ ]]; then
 			multipass start ${host}
+      # update /etc/hosts file on all VMs
+      multipass exec -n ${host} -- sudo bash -c 'echo -e "192.168.73.101 kubemaster01\n192.168.73.102 kubeworker01\n192.168.73.103 kubew    orker02" >> /etc/hosts'
 		else
 			echo "The ${host} has ${get_host_state} at this moment"
 		fi
