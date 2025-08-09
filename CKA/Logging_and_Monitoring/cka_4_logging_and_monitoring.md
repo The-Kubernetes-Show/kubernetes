@@ -74,7 +74,7 @@ export NAMESPACE='default'
 export POD_NAME='test'
 export CONTAINER_NAME='test'
 sudo crictl ps |egrep "^CONTAINER|$POD_NAME"
-sudo crictl logs `sudo crictl ps |grep -i $POD_NAME|awk '{print $1}'
+sudo crictl logs `sudo crictl ps |grep -i $POD_NAME|awk '{print $1}'`
 ```
 
 ```bash
