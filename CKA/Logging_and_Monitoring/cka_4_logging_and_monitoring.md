@@ -98,7 +98,7 @@ sudo tail /var/log/pods/${NAMESPACE}_${POD_NAME}_${POD_UID}/${CONTAINER_NAME}/0.
 
 - **Metrics Server:**
   - *Heapster* was deprecated; the *Metrics Server* is now the expected solution for basic resource monitoring.
-  - Metrics Server aggregates resource usage metrics (CPU, memory) for nodes and pods, available via `kubectl top node` and `kubectl top pod`.[^4][^2]
+  - Metrics Server aggregates resource usage metrics (CPU, memory) for nodes and pods, available via `kubectl top node` and `kubectl top pod`.
 - **Built-in monitoring commands:**
   - `kubectl top node` — view node metrics.
   - `kubectl top pod` — view pod metrics.
