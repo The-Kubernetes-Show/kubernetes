@@ -477,7 +477,7 @@ function k8s_status_all {
 				echo -e "\n-------------------------------------------------"
 				echo -e "\nCreating resources for 'connectivity-check' in cilium-test namespace"
 				echo -e "\n-------------------------------------------------"
-				multipass exec -n kubemaster01 -- sudo bash -c 'kubectl apply -n cilium-test -f https://raw.githubusercontent.com/cilium/cilium/1.17.3/examples/kubernetes/connectivity-check/connectivity-check.yaml'
+				multipass exec -n kubemaster01 -- sudo bash -c 'kubectl apply -n cilium-test -f https://raw.githubusercontent.com/cilium/cilium/1.18.0/examples/kubernetes/connectivity-check/connectivity-check.yaml'
 				echo -e "\n-------------------------------------------------"
 				echo -e "\nWaiting for pods to be ready in cilium-test namespace"
 				echo -e "\n-------------------------------------------------"
