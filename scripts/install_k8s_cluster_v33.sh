@@ -267,9 +267,9 @@ EOF'
         multipass exec -n ${host} -- sudo bash -c 'arch=`uname -m`; if [ $arch == 'x86_64' ]; then echo 'amd64' >~/.arch; else echo 'arm64' >~/.arch; fi'
 
 		# Install containerd  # trying to run bleeding edge version
-		multipass exec -n ${host} -- sudo bash -c 'curl -LOs https://github.com/containerd/containerd/releases/download/v2.0.5/containerd-2.0.5-linux-`cat ~/.arch`.tar.gz'
+		multipass exec -n ${host} -- sudo bash -c 'curl -LOs https://github.com/containerd/containerd/releases/download/v2.1.4/containerd-2.1.4-linux-`cat ~/.arch`.tar.gz'
 		multipass exec -n ${host} -- sudo bash -c 'curl -LOs https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
-		multipass exec -n ${host} -- sudo bash -c 'tar Cxzvf /usr/local containerd-2.0.5-linux-`cat ~/.arch`.tar.gz'
+		multipass exec -n ${host} -- sudo bash -c 'tar Cxzvf /usr/local containerd-2.1.4-linux-`cat ~/.arch`.tar.gz'
 		multipass exec -n ${host} -- sudo bash -c 'mkdir -p /usr/local/lib/systemd/system/'
 		multipass exec -n ${host} -- sudo bash -c 'mv containerd.service /usr/local/lib/systemd/system/'
 		multipass exec -n ${host} -- sudo bash -c 'mkdir -p /etc/containerd/'
@@ -316,7 +316,7 @@ EOF'
 	# https://docs.cilium.io/en/stable/gettingstarted/k8s-install-helm/#installing-cilium
 	multipass exec -n kubemaster01 -- sudo bash -c 'curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash'
 	multipass exec -n kubemaster01 -- sudo bash -c 'helm repo add cilium https://helm.cilium.io/'
-	multipass exec -n kubemaster01 -- sudo bash -c 'helm install cilium cilium/cilium --version 1.17.3  --namespace kube-system'
+	multipass exec -n kubemaster01 -- sudo bash -c 'helm install cilium cilium/cilium --version 1.18.0  --namespace kube-system'
 
 	# Install Cilium CLI on master node
 	# https://docs.cilium.io/en/stable/gettingstarted/k8s-install-helm/#installing-cilium-cli

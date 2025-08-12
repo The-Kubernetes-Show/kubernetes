@@ -1,0 +1,11 @@
+### Create a test container with nginx image
+
+kubectl run test --image nginx
+
+### Copy the provided format.txt file inside our test container
+
+kubectl cp format.txt test:/
+
+### Check the response time for x.com
+
+kubectl exec -it test -- bash -xc 'curl -w "@format.txt" --head https://www.x.com'

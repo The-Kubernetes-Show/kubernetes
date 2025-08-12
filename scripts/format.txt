@@ -1,0 +1,8 @@
+--------------------- Results --------------------- \n
+URL: %{url} \n
+DNS lookup time: %{time_namelookup}  seconds\n
+Connect time: %{time_connect}  seconds\n
+Start transfer time: %{time_starttransfer}  seconds\n
+HTTP code: %{http_code} \n
+Redirect time: %{time_redirect} \n
+Total time: %{time_total} seconds\n
