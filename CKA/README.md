@@ -38,7 +38,7 @@ This course outline is structured to align with the [CKA Curriculum v1.33](https
 |  | Troubleshoot cluster components | ✅ | ✅ |
 |  | Monitor cluster and application resource usage | ✅ | ✅ |
 |  | Manage and evaluate container output streams | ✅ | ✅ |
-|  | Troubleshoot services and networking | ✅[Link 1](Troubleshooting/cka_troubleshoot_svc_and_networking.md) | ✅ [Video 7 - Aug 16, 2025](TBD) |
+|  | Troubleshoot services and networking | ✅[Link 1](Troubleshooting/cka_troubleshoot_svc_and_networking.md) | ✅ [Video 7 - Aug 16, 2025](https://www.youtube.com/watch?v=qs0i_pxlx3Y) |
 | 2. Workloads & Scheduling (15%) | Understand deployments and how to perform rolling update and rollbacks | ✅ [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md), ⏳ | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54), ⏳ |
 |  | Use ConfigMaps and Secrets to configure applications | ⏳ | ⏳ |
 |  | Configure workload autoscaling | ⏳ | ⏳ |

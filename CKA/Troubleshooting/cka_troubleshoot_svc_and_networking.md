@@ -6,6 +6,10 @@ This guide will walk you through how to approach troubleshooting Services and ne
 
 ---
 
+[YouTube Video Link](https://www.youtube.com/watch?v=qs0i_pxlx3Y)
+
+---
+
 ## 1. Verify the Service Object
 
 Let's run a pod and make it to listen on port 80
