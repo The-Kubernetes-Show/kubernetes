@@ -7,30 +7,30 @@ A set of exercises to help you prepare for the [Certified Kubernetes Administrat
 This course outline is structured to align with the [CKA Curriculum v1.33](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.33.pdf), following the recommended topic weights and a logical learning progression from foundational to advanced concepts.
 
 ---
-#### Topics already covered "before" aligning to latest CKA Curriculum
-> ###### These topics are still relevent and an excellent place to start. These topics give you deep insights into the concepts of K8S which comes handy to pass the CKA exam.
+#### Prerequisite: a list of topics already covered "before" aligning to latest CKA Curriculum
+> ###### These topics are "still relevent and an excellent place to start". These topics give you deep insights into the concepts of K8S which comes handy to pass the CKA exam.
 
 ---
 
 | Module | Topic | GitHub Links | Video Link |
 | :-- | :-- | :-- | :-- |
-| 1. Introduction \& Kubernetes Basics | kubectl Basics and Configuration | ✅ [Link 1](Introduction_and_Basics/getting_started_with_docker.md) ✅ [Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [Video 1 - May 3, 2025](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
+| Introduction \& Kubernetes Basics | kubectl Basics and Configuration | ✅ [Link 1](Introduction_and_Basics/getting_started_with_docker.md) ✅ [Link 2](Introduction_and_Basics/kubectl_basics_and_conf.md) | [Video 1 - May 3, 2025](https://www.youtube.com/watch?v=kKfLotzx-Cs) |
 |  | Kubernetes Architecture Overview | ✅ [Link 1](Introduction_and_Basics/Kubernetes_Architecture.md) | [Video 2 - May 18, 2025](https://www.youtube.com/watch?v=hPsKGywgxbM) |
 |  | Cluster Components (Master, Node, etc.) | ✅ | ✅ |
-| 2. Core Concepts (19%) | Pods: Anatomy, Lifecycle, and Management | ✅ [Link 1](Core_Concepts/Pods_Imperative_vs_Declarative.md) ✅ [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54) |
+| Core Concepts | Pods: Anatomy, Lifecycle, and Management | ✅ [Link 1](Core_Concepts/Pods_Imperative_vs_Declarative.md) ✅ [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54) |
 |  | Namespaces and Resource Isolation | ✅ [Link 1](Core_Concepts/What_Makes_Up_a_Kubernetes_Pod.md) ✅ [Link 2](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md) | [Video 4 - June 22, 2025](https://www.youtube.com/watch?v=6sEiEIyr-Zc) |
 |  | ReplicaSets and Deployments | ✅ | ✅  |
 |  | Labels, Selectors, and Annotations | ✅ | ✅  |
-| 3. Scheduling (15%) | Manual Pod Scheduling | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
+| Scheduling | Manual Pod Scheduling | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
 |  | Node Selectors, Affinity, and Taints/Tolerations | ✅ | ✅ |
 |  | DaemonSets and Static Pods | ✅ | ✅ |
-| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts | ✅ [Link 1](Troubleshooting/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
+| Logging \& Monitoring | Cluster Logging Concepts | ✅ [Link 1](Troubleshooting/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
 |  | Monitoring Cluster Components | ✅ | ✅ |
 |  | Application Logs and Troubleshooting | ✅ | ✅ |
 
 ---
 
-#### Latest CKA Curriculum v1.33 (as of Aug 2025)
+### Latest CKA Curriculum v1.33 (as of Aug 2025)
 
 | Module | Topic | GitHub Links | Video Link |
 | :-- | :-- | :-- | :-- |
@@ -38,7 +38,7 @@ This course outline is structured to align with the [CKA Curriculum v1.33](https
 |  | Troubleshoot cluster components | ✅ | ✅ |
 |  | Monitor cluster and application resource usage | ✅ | ✅ |
 |  | Manage and evaluate container output streams | ✅ | ✅ |
-|  | Troubleshoot services and networking | ⏳ | ⏳ |
+|  | Troubleshoot services and networking | ✅[Link 1](Troubleshooting/cka_troubleshoot_svc_and_networking.md) | ✅ [Video 7 - Aug 16, 2025](TBD) |
 | 2. Workloads & Scheduling (15%) | Understand deployments and how to perform rolling update and rollbacks | ✅ [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md), ⏳ | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54), ⏳ |
 |  | Use ConfigMaps and Secrets to configure applications | ⏳ | ⏳ |
 |  | Configure workload autoscaling | ⏳ | ⏳ |
