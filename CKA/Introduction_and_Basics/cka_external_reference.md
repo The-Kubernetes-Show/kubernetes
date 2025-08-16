@@ -7,8 +7,6 @@
 
 [![cka-badge](https://training.linuxfoundation.org/wp-content/uploads/2019/03/logo_cka_whitetext-300x293.png)](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)
 
-A set of exercises to help you prepare for the [Certified Kubernetes Administrator (CKA) Exam](https://www.cncf.io/certification/cka/)
-
 The format of the exam is entirely in a hands-on, command-line environment. You can take the exam at home or in a testing center, and you must complete the exam in 180 minutes. Register for the exam [here](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/). The cost is US $445.00.
 
 
@@ -27,13 +25,12 @@ During the exam, you will have access to many different clusters. (e.g. below gi
 
 [Important Instructions: CKA and CKAD - Official Exam Handbook](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad#cka-and-ckad-environment)
 
-[FFrequently Asked Questions: CKA and CKAD & CKS - Official Exam Handbook](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks)
+[Frequently Asked Questions: CKA and CKAD & CKS - Official Exam Handbook](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks)
 
 Also during the exam, you may have one and ONLY one of the following tabs open at all times:  
 [kubernetes.io/docs](https://kubernetes.io/docs/home/)  
 [kubernetes.io/blog](https://kubernetes.io/blog/)
 
-Not sure if you have the right equipment to take the exam at home? [Run a system check](https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck)
 
 ---
 
@@ -78,4 +75,4 @@ The exams are upgraded to the latest version of k8s within 4-6 weeks of the vers
 
 > For advanced usage or troubleshooting, review the comments in the script and consult the referenced documentation.
 >
-> v1.0.0 : release date: 2025-05-18
+> v1.1.0 : release date: 2025-08-16

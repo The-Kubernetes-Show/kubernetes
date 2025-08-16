@@ -4,7 +4,11 @@
 
 A set of exercises to help you prepare for the [Certified Kubernetes Administrator (CKA) Exam](https://www.cncf.io/certification/cka/)
 
-This course outline is structured to align with the [CKA Curriculum v1.32](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.32.pdf), following the recommended topic weights and a logical learning progression from foundational to advanced concepts.
+This course outline is structured to align with the [CKA Curriculum v1.33](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.33.pdf), following the recommended topic weights and a logical learning progression from foundational to advanced concepts.
+
+---
+#### Topics already covered "before" aligning to latest CKA Curriculum
+> ###### These topics are still relevent and an excellent place to start. These topics give you deep insights into the concepts of K8S which comes handy to pass the CKA exam.
 
 ---
 
@@ -20,35 +24,53 @@ This course outline is structured to align with the [CKA Curriculum v1.32](https
 | 3. Scheduling (15%) | Manual Pod Scheduling | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
 |  | Node Selectors, Affinity, and Taints/Tolerations | ✅ | ✅ |
 |  | DaemonSets and Static Pods | ✅ | ✅ |
-| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts | ✅ [Link 1](Logging_and_Monitoring/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
+| 4. Logging \& Monitoring (10%) | Cluster Logging Concepts | ✅ [Link 1](Troubleshooting/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
 |  | Monitoring Cluster Components | ✅ | ✅ |
 |  | Application Logs and Troubleshooting | ✅ | ✅ |
-| 5. Cluster Maintenance (11%) | Upgrading Kubernetes Components |  |  |
-|  | Backup and Restore (etcd, resources) |  |  |
-|  | Managing Certificates and Kubernetes Versions |  |  |
-| 6. Networking (20%) | Cluster Networking Model |  |  |
-|  | Services (ClusterIP, NodePort, LoadBalancer) |  |  |
-|  | Network Policies |  |  |
-|  | Ingress Controllers and Resources |  |  |
-| 7. Storage (10%) | Volumes and Persistent Volumes |  |  |
-|  | Persistent Volume Claims |  |  |
-|  | Storage Classes and Dynamic Provisioning |  |  |
-| 8. Security (12%) | Kubernetes Authentication and Authorization |  |  |
-|  | RBAC and Service Accounts |  |  |
-|  | Security Contexts and Pod Security Policies |  |  |
-|  | Network Policies for Security |  |  |
-| 9. Troubleshooting (13%) | Troubleshooting Pods and Nodes |  |  |
-|  | Troubleshooting Networking |  |  |
-|  | Troubleshooting Cluster Components |  |  |
 
+---
+
+#### Latest CKA Curriculum v1.33 (as of Aug 2025)
+
+| Module | Topic | GitHub Links | Video Link |
+| :-- | :-- | :-- | :-- |
+| 1. Troubleshooting (30%) | Troubleshoot clusters and nodes | ✅ [Link 1](Troubleshooting/cka_4_logging_and_monitoring.md) | [Video 6 - Aug 9, 2025](https://youtu.be/9W2GQVOkCKI) |
+|  | Troubleshoot cluster components | ✅ | ✅ |
+|  | Monitor cluster and application resource usage | ✅ | ✅ |
+|  | Manage and evaluate container output streams | ✅ | ✅ |
+|  | Troubleshoot services and networking | ⏳ | ⏳ |
+| 2. Workloads & Scheduling (15%) | Understand deployments and how to perform rolling update and rollbacks | ✅ [Link 1](Core_Concepts/kubernetes-core-concepts-hands-on-guide.md), ⏳ | [Video 3 - June 7, 2025](https://www.youtube.com/watch?v=7c7BOV8Ra54), ⏳ |
+|  | Use ConfigMaps and Secrets to configure applications | ⏳ | ⏳ |
+|  | Configure workload autoscaling | ⏳ | ⏳ |
+|  | Understand primitives for robust, self-healing apps | ⏳ | ⏳ |
+|  | Configure Pod admission and scheduling (limits, affinity, taints, tolerations) | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md), ⏳ | [Video 5 - July 13, 2025](https://youtu.be/quIx23Vq8W0), ⏳ |
+|  | Awareness of manifest management and templating tools | ⏳ | ⏳ |
+| 3. Cluster Architecture, Installation & Configuration (25%) | Manage role-based access control (RBAC) | ⏳ | ⏳ |
+|  | Prepare underlying infrastructure for installing a Kubernetes cluster | ⏳ | ⏳ |
+|  | Create and manage Kubernetes clusters using kubeadm | ⏳ | ⏳ |
+|  | Manage the lifecycle of Kubernetes clusters | ⏳ | ⏳ |
+|  | Implement and configure a highly-available control plane | ⏳ | ⏳ |
+|  | Perform version upgrades on Kubernetes clusters | ⏳ | ⏳ |
+|  | Implement etcd backup and restore | ⏳ | ⏳ |
+|  | Use Helm and Kustomize to install cluster components | ⏳ | ⏳ |
+|  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ⏳ | ⏳ |
+|  | Understand CRDs, install and configure operators | ⏳ | ⏳ |
+| 4. Services & Networking (20%) | Understand connectivity between Pods | ⏳ | ⏳ |
+|  | Define and enforce Network Policies | ⏳ | ⏳ |
+|  | Use ClusterIP, NodePort, LoadBalancer service types and endpoints | ⏳ | ⏳ |
+|  | Use the Gateway API to manage Ingress traffic | ⏳ | ⏳ |
+|  | Use Ingress controllers and Ingress resources | ⏳ | ⏳ |
+|  | Understand and use CoreDNS | ⏳ | ⏳ |
+| 5. Storage (10%) | Implement storage classes and dynamic volume provisioning | ⏳ | ⏳ |
+|  | Configure volume types, access modes and reclaim policies | ⏳ | ⏳ |
+|  | Manage persistent volumes and persistent volume claims | ⏳ | ⏳ |
 
 ---
 
 - Modules are ordered from foundational to advanced, matching the natural learning curve and CKA exam blueprint.
-- Topic weights (percentages) reflect their emphasis in the official [CKA Curriculum v1.32](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.32.pdf).
+- Topic weights (percentages) reflect their emphasis in the official [CKA Curriculum v1.33](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.33.pdf).
 - I will be updating GitHub Readme and YouTube video links as I develop content for each topic.
 
----
 
 External references:
 * ##### [Certified Kubernetes Administrator (CKA) Exam](cka_external_reference.md)
@@ -57,4 +79,4 @@ External references:
 
 > For advanced usage or troubleshooting, review the comments in the script and consult the referenced documentation.
 >
-> v1.0.3 : release date: 2025-06-07
+> v1.0.4 : release date: 2025-08-16

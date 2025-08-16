@@ -1,4 +1,4 @@
-# 4. Logging & Monitoring (10%)
+# Troubleshooting (30%)
 
 >##### 💡TIP💡: Focus on Kubernetes native commands and workflows (kubectl, Metrics Server) for the Certified Kubernetes Administrator (CKA) exam. Third-party tools (e.g. Prometheus, Grafana, Fluentd, and Elasticsearch) are not explicitly listed as required topics or tools in the official CKA exam syllabus.
 
