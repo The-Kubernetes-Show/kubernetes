@@ -1,5 +1,7 @@
 # Workloads & Scheduling Hands-On Guide
 
+#### [YouTube video link](https://www.youtube.com/watch?v=5GJPi1oTw8Q)
+
 This guide covers the following important Kubernetes topics to complement previous material:
 
 1. Understand Deployments and How to Perform Rolling Updates and Rollbacks  
