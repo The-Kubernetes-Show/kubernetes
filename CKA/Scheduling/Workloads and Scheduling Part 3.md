@@ -4,7 +4,7 @@ Welcome back Kubernetes Explorers! Today's session digs deeper into managing app
 
 ---
 
-#### [YouTube video link](TBD)
+#### [YouTube video link](https://youtu.be/PP-kVkpKc60)
 
 ---
 
