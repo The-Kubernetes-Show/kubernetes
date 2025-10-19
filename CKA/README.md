@@ -51,7 +51,7 @@ This course outline is structured to align with the [CKA Curriculum v1.33](https
 |  | Manage the lifecycle of Kubernetes clusters | ✅ | ✅ |
 |  | Implement and configure a highly-available control plane | ✅ | ✅ |
 |  | Perform version upgrades on Kubernetes clusters | ✅ | ✅ |
-|  | Implement etcd backup and restore | ✅ | ✅ |
+|  | Implement etcd backup and restore (Optional) | ✅ | ✅ |
 |  | Use Helm and Kustomize to install cluster components | ✅ | ✅ |
 |  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ✅ | ✅ |
 |  | Understand CRDs, install and configure operators | ✅ | ✅ |

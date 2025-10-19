@@ -5,6 +5,7 @@ _Knowing the theory is great, but hands-on muscle memory and real-world examples
 We will use [Killercoda live playground](https://killercoda.com/playgrounds/scenario/kubernetes) to run these scnarios.
 
 #### [YouTube video link](TBD)
+
 ---
 
 ## 🛡️ Role-Based Access Control (RBAC)
@@ -145,6 +146,7 @@ kubectl create rolebinding read-secrets-binding \
   --user=devuser \
   --namespace=dev
 ```
+
 _YAML equivalent:_
 
 ```yaml
@@ -218,7 +220,7 @@ roleRef:
 
 ---
 
-## 🚀 Create & Manage Clusters using kubeadm.
+## 🚀 Create & Manage Clusters using kubeadm
 
 **Init a new cluster**
 [Documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
@@ -292,7 +294,7 @@ More: [Administer Clusters](https://kubernetes.io/docs/tasks/administer-cluster/
 
 ---
 
-## 🏆 Implement Highly-Available Control Plane.
+## 🏆 Implement Highly-Available Control Plane
 
 **Add additional masters**  
 On new control plane node:
@@ -317,7 +319,6 @@ More: [Kubeadm HA Clusters](https://kubernetes.io/docs/setup/production-environm
 
 **Control Plane Upgrade**
 [Documentation](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)
-
 
 The upgrade workflow at high level is the following:
 
@@ -349,9 +350,8 @@ sudo kubeadm upgrade apply v1.34.x
 Once the command finishes you should see:
 
 > _[upgrade/successful] SUCCESS! Your cluster was upgraded to "v1.34.x". Enjoy!_
-> 
+>
 > _[upgrade/kubelet] Now that your control plane is upgraded, please proceed with upgrading your kubelets if you haven't already done so._
-
 
 **Node Upgrade**
 [Documentation](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/upgrading-linux-nodes/)
@@ -417,6 +417,7 @@ ETCDCTL_API=3 etcdctl snapshot save /tmp/etcd-backup.db \
 ```
 
 **Restore etcd**
+
 ```bash
 ETCDCTL_API=3 etcdctl snapshot restore /tmp/etcd-backup.db --data-dir /var/lib/etcd-from-backup
 ```
@@ -430,7 +431,7 @@ More: [etcd Official Docs](https://kubernetes.io/docs/tasks/administer-cluster/c
 
 ## 🔌 Extension Interfaces: CNI, CSI, CRI
 
-**CNI Example (for reference only, I don't expect it to be in the exam):**  
+**CNI Example:**  
 Check networking:
 
 ```bash
@@ -438,13 +439,13 @@ cat /etc/cni/net.d/*
 kubectl get pods -n kube-system
 ```
 
-Install Calico networking (for reference only, I don't expect it to be in the exam):
+Install Calico networking:
 
 ```bash
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 
-**CSI Example(for reference only, I don't expect it to be in the exam):**  
+**CSI Example:**  
 List storage drivers:
 
 ```bash
@@ -460,13 +461,14 @@ systemctl status containerd
 ```
 
 More:  
+
 - [Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
 - [Storage](https://kubernetes.io/docs/concepts/storage/)
 - [Container Runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
 
 ---
 
-## 🧬 Custom Resource Definitions (CRDs) & Operators (for reference only, I don't expect it to be in the exam):
+## 🧬 Custom Resource Definitions (CRDs) & Operators
 
 **Define a simple CRD**
 
@@ -532,6 +534,7 @@ helm get all prom-operator
 ```
 
 More:  
+
 - [CRD Docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)
 - [Operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 
@@ -552,12 +555,12 @@ More:
 ## 🏠 Homework (Do It Yourself)
 
 - Set up a 3-node cluster, with two control plane nodes (hint: use VirtualBox or cloud VMs).
-- Create custom RBAC so only a “devuser” can list pods in the “dev” namespace.
+- Create custom RBAC so only a **`devuser`** can list pods in the **`dev`** namespace.
 - Use Helm to install a dashboard or metrics-server component; delete and reinstall it.
-- Simulate an etcd disaster: intentionally break a cluster, restore from snapshot.
-- Write your own CRD (“helloapp”), deploy at least one operator, and create a custom resource instance.
-- Upgrade kubeadm and kubelet on a node, noting every error and fix.
-- Document every step in your own markdown for future reference—this is real-world professional documentation!
+- Simulate an **`etcd`** disaster: intentionally break a cluster, restore from snapshot.
+- Write your own CRD (**`helloapp`**), deploy at least one operator, and create a custom resource instance.
+- Upgrade **`kubeadm`** and **`kubelet`** on a node, noting every error and fix.
+- Maintain comprehensive documentation of each procedure for future reference. This practice enhances exam preparation while establishing a foundation for professional documentation standards in production environments
 
 ---
 
