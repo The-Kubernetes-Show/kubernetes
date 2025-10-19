@@ -4,7 +4,7 @@ _Knowing the theory is great, but hands-on muscle memory and real-world examples
 
 We will use [Killercoda live playground](https://killercoda.com/playgrounds/scenario/kubernetes) to run these scnarios.
 
-#### [YouTube video link](TBD)
+#### [YouTube video link](https://youtu.be/nP4OHhB5ZkA)
 
 ---
 
@@ -44,6 +44,12 @@ those permissions apply. Understanding the differences, common use cases, and pr
 **Namespace Role**  
 
 Following command will imperatively create the `secret-reader` Role in the `dev` namespace, granting permissions to `get` and `list` secrets (remove `--dry-run=client  -o yaml` to actually create it).
+
+Create a namespace first.
+
+```bash
+kubectl create ns dev
+```
 
 Create a Role to permit reading secrets in the `dev` namespace.:
 
@@ -331,12 +337,16 @@ Update the OS packages:
 ```bash
 # Find the latest 1.34 version in the list.
 # It should look like 1.34.x-*, where x is the latest patch.
+# note the current version for kubeadm
+kubeadm version
 sudo apt update
 sudo apt-cache madison kubeadm
 # replace x in 1.34.x-* with the latest patch version
 sudo apt-mark unhold kubeadm && \
 sudo apt-get update && sudo apt-get install -y kubeadm='1.34.x-*' && \
 sudo apt-mark hold kubeadm
+# note the new version for kubeadm
+kubeadm version
 ```
 
 Plan and apply the newer version:
@@ -353,8 +363,48 @@ Once the command finishes you should see:
 >
 > _[upgrade/kubelet] Now that your control plane is upgraded, please proceed with upgrading your kubelets if you haven't already done so._
 
+Upgrade the kubelet and kubectl:
+
+```bash
+# replace x in 1.34.x-* with the latest patch version
+sudo apt-mark unhold kubelet kubectl && \
+sudo apt-get update && sudo apt-get install -y kubelet='1.34.*-*' kubectl='1.34.x-*' && \
+sudo apt-mark hold kubelet kubectl
+```
+
+Restart the kubelet:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+```
+
+**Tip:**  
+Validate the updated version for your master node:
+
+```bash
+kubectl get nodes
+```
+
 **Node Upgrade**
 [Documentation](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/upgrading-linux-nodes/)
+
+Update the OS packages:
+
+```bash
+# Find the latest 1.34 version in the list.
+# It should look like 1.34.x-*, where x is the latest patch.
+# note the current version for kubeadm
+kubeadm version
+sudo apt update
+sudo apt-cache madison kubeadm
+# replace x in 1.34.x-* with the latest patch version
+sudo apt-mark unhold kubeadm && \
+sudo apt-get update && sudo apt-get install -y kubeadm='1.34.x-*' && \
+sudo apt-mark hold kubeadm
+# note the new version for kubeadm
+kubeadm version
+```
 
 Call **"kubeadm upgrade"**
 For worker nodes this upgrades the local kubelet configuration:
