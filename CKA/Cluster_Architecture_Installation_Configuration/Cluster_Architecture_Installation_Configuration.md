@@ -218,7 +218,7 @@ roleRef:
 
 ---
 
-## 🚀 Create & Manage Clusters using kubeadm. I don't think it would be needed but still you should know how it is done.
+## 🚀 Create & Manage Clusters using kubeadm.
 
 **Init a new cluster**
 [Documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
@@ -292,7 +292,7 @@ More: [Administer Clusters](https://kubernetes.io/docs/tasks/administer-cluster/
 
 ---
 
-## 🏆 Implement Highly-Available Control Plane (I don't expect it to be part of the exam!, its good to know for real life self managed k8s)
+## 🏆 Implement Highly-Available Control Plane.
 
 **Add additional masters**  
 On new control plane node:
