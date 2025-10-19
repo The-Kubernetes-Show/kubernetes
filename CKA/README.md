@@ -45,16 +45,16 @@ This course outline is structured to align with the [CKA Curriculum v1.33](https
 |  | Understand primitives for robust, self-healing apps | ✅ | ✅ |
 |  | Configure Pod admission and scheduling (limits, affinity, taints, tolerations) | ✅ [Link 1](Scheduling/Kubernetes%20Pod%20Scheduling%20&%20Placement.md) | ✅[Video - July 13, 2025](https://youtu.be/quIx23Vq8W0) |
 |  | Awareness of manifest management and templating tools | ✅ [Link 2](Scheduling/Workloads%20and%20Scheduling%20Part%202.md), ✅ [Link 3](Scheduling/Workloads%20and%20Scheduling%20Part%203.md) | ✅[Video - Sept 21, 2025](https://youtu.be/PP-kVkpKc60) |
-| 3. Cluster Architecture, Installation & Configuration (25%) | Manage role-based access control (RBAC) | ⏳ | ⏳ |
-|  | Prepare underlying infrastructure for installing a Kubernetes cluster | ⏳ | ⏳ |
-|  | Create and manage Kubernetes clusters using kubeadm | ⏳ | ⏳ |
-|  | Manage the lifecycle of Kubernetes clusters | ⏳ | ⏳ |
-|  | Implement and configure a highly-available control plane | ⏳ | ⏳ |
-|  | Perform version upgrades on Kubernetes clusters | ⏳ | ⏳ |
-|  | Implement etcd backup and restore | ⏳ | ⏳ |
-|  | Use Helm and Kustomize to install cluster components | ⏳ | ⏳ |
-|  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ⏳ | ⏳ |
-|  | Understand CRDs, install and configure operators | ⏳ | ⏳ |
+| 3. Cluster Architecture, Installation & Configuration (25%) | Manage role-based access control (RBAC) | ✅ [Link 1](Cluster_Architecture_Installation_Configuration/Cluster_Architecture_Installation_Configuration.md) | ✅[Video - Oct 18, 2025](TBD) |
+|  | Prepare underlying infrastructure for installing a Kubernetes cluster | ✅ | ✅ |
+|  | Create and manage Kubernetes clusters using kubeadm | ✅ | ✅ |
+|  | Manage the lifecycle of Kubernetes clusters | ✅ | ✅ |
+|  | Implement and configure a highly-available control plane | ✅ | ✅ |
+|  | Perform version upgrades on Kubernetes clusters | ✅ | ✅ |
+|  | Implement etcd backup and restore | ✅ | ✅ |
+|  | Use Helm and Kustomize to install cluster components | ✅ | ✅ |
+|  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ✅ | ✅ |
+|  | Understand CRDs, install and configure operators | ✅ | ✅ |
 | 4. Services & Networking (20%) | Understand connectivity between Pods | ⏳ | ⏳ |
 |  | Define and enforce Network Policies | ⏳ | ⏳ |
 |  | Use ClusterIP, NodePort, LoadBalancer service types and endpoints | ⏳ | ⏳ |
