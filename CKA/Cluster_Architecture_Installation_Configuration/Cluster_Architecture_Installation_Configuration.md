@@ -9,7 +9,34 @@ We will use [Killercoda live playground](https://killercoda.com/playgrounds/scen
 
 ## 🛡️ Role-Based Access Control (RBAC)
 
+**What is RBAC?**
+RBAC is a way to control access to Kubernetes resources.
 **RBAC** lets you gatekeep: Who can do what, where, with which Kubernetes objects?
+
+**What is a Role?**
+A Role is a Kubernetes resource that defines a set of permissions.
+It is a Kubernetes resource that defines a set of rules.
+
+**What is a RoleBinding?**
+A RoleBinding is a Kubernetes resource that binds a Role to a set of Subjects.
+
+**RoleBindings** and **ClusterRoleBindings** are **central to secure Kubernetes cluster administration**, they control "who" can access Kubernetes resources and "where"
+those permissions apply. Understanding the differences, common use cases, and practical troubleshooting is vital for the CKA exam and real-world clusters.
+
+## Key Differences
+
+```
++---------------------+--------------------------+--------------------------------+
+|      Concept        |    Role/RoleBinding      | ClusterRole/ClusterRoleBinding |
++---------------------+--------------------------+--------------------------------+
+| Scope               | Namespace-specific       | Cluster-wide (all namespaces)  |
++---------------------+--------------------------+--------------------------------+
+| Resource            | Pods, secrets, etc.      | Nodes or any resource          |
++---------------------+--------------------------+--------------------------------+
+| Typical Uses        | Fine-grained control     | Admin, view, access cluster    |
+|                     | (dev, prod teams)        | wide (infrastructure, etc.)    |
++---------------------+--------------------------+--------------------------------+
+```
 
 ### Common Examples
 
@@ -58,7 +85,6 @@ or use following yaml and apply it.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  creationTimestamp: null
   name: dev-secrets-read
   namespace: dev
 roleRef:
@@ -106,24 +132,6 @@ kubectl create rolebinding bot-secrets-read \
 ```
 
 More: [Kubernetes RBAC Official Docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
-
-**RoleBindings** and **ClusterRoleBindings** are **central to secure Kubernetes cluster administration**, they control "who" can access Kubernetes resources and "where"
-those permissions apply. Understanding the differences, common use cases, and practical troubleshooting is vital for the CKA exam and real-world clusters.
-
-## Key Differences
-
-```
-+---------------------+--------------------------+--------------------------------+
-|      Concept        |    Role/RoleBinding      | ClusterRole/ClusterRoleBinding |
-+---------------------+--------------------------+--------------------------------+
-| Scope               | Namespace-specific       | Cluster-wide (all namespaces)  |
-+---------------------+--------------------------+--------------------------------+
-| Resource            | Pods, secrets, etc.      | Nodes or any resource          |
-+---------------------+--------------------------+--------------------------------+
-| Typical Uses        | Fine-grained control     | Admin, view, access cluster    |
-|                     | (dev, prod teams)        | wide (infrastructure, etc.)    |
-+---------------------+--------------------------+--------------------------------+
-```
 
 ## Practical Examples
 
@@ -213,6 +221,7 @@ roleRef:
 ## 🚀 Create & Manage Clusters using kubeadm. I don't think it would be needed but still you should know how it is done.
 
 **Init a new cluster**
+[Documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 Initialize with Pod network CIDR and control plane endpoint:
 
 ```bash
