@@ -55,7 +55,7 @@ This course outline is structured to align with the [CKA Curriculum v1.34](https
 |  | Use Helm and Kustomize to install cluster components | ✅ | ✅ |
 |  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ✅ | ✅ |
 |  | Understand CRDs, install and configure operators | ✅ | ✅ |
-| 4. Services & Networking (20%) | Understand connectivity between Pods | ✅ [Link 1](Services_and_Networking/Services_and_Networking.md) | ✅ [Video - Nov 05, 2025](TBD) |
+| 4. Services & Networking (20%) | Understand connectivity between Pods | ✅ [Link 1](Services_and_Networking/Services_and_Networking.md) | ✅ [Video - Nov 09, 2025](TBD) |
 |  | Define and enforce Network Policies | ✅ | ✅ |
 |  | Use ClusterIP, NodePort, LoadBalancer service types and endpoints | ✅ | ✅ |
 |  | Use the Gateway API to manage Ingress traffic | ✅ | ✅ |

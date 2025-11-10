@@ -2,29 +2,46 @@
 
 Welcome back, Kubernetes learners! This session explores one of the most vital CKA domains: **Services & Networking**. We'll break down pod connectivity, network policies, Service types (including **ClusterIP**, **NodePort**, **LoadBalancer**), dive into the **Gateway API** and modern **Ingress**, deploy a gateway end to end, and wrap up with **CoreDNS** essentials.
 
+We will use this [playground](https://killercoda.com/playgrounds/scenario/kubernetes) throughout this session.
+
 ## 1. Pod-to-Pod Connectivity
 
 In Kubernetes, every Pod gets its own unique IP address, which means Pods can talk to each other directly in the same cluster, provided network policies don’t block them.
 
 ### Quick Connectivity Check
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: busybox
-spec:
-  containers:
-  - name: busybox
-    image: busybox
-    command: ["sleep", "3600"]
+Start with a simple deployment of Nignx that listens on port 80. Expose it via ClusterIP service on port 8080:
+
+```bash
+kubectl create deployment nginxpod --image=nginx  --port 80
+kubectl wait --for=jsonpath='{.status.phase}'=Running pod -l app=nginxpod
+kubectl expose deployment nginxpod --name nginxsvc --target-port 80 --port 8080
+kubectl describe svc nginxsvc # it should show POD IP and port 80 in "Endpoints"
 ```
 
-Connect from one pod to another:
+Create a test pod with busybox image
+
+```bash
+kubectl run busybox --image=busybox --restart=Never -- sleep 3600
+```
+
+Connect from busybox pod to nginxpod:
 
 ```sh
-kubectl exec -it busybox -- nslookup <another-pod-name>
-kubectl exec -it busybox -- wget <service-name>
+kubectl exec -it busybox -- nslookup nginxsvc.default.svc.cluster.local
+kubectl exec -it busybox -- wget -S -O - nginxsvc:8080
+```
+
+Find the nginxpod IP
+
+```sh
+IP_OF_NGINX_POD=$(kubectl get pods -l app=nginxpod -o jsonpath='{range .items[*]}{.status.podIP}{end}')
+```
+
+Connect to the nginxpod from busybox pod
+
+```sh
+kubectl exec -it busybox -- wget -q -O - $IP_OF_NGINX_POD
 ```
 
 For details, check the [official docs on Pod networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/).
@@ -33,7 +50,7 @@ For details, check the [official docs on Pod networking](https://kubernetes.io/d
 
 ## 2. Defining and Enforcing Network Policies
 
-Network policy resources let you **control traffic** at the IP address or port level (think: firewalls for Pods!). Start with allowing all-to-all traffic by default. Then, lock it down.
+Network policy resources let you **control traffic** at the IP address or port level (think: firewalls for Pods!). Starts with allowing all-to-all traffic by default. Then, lock it down.
 
 ### Example: Deny all except from a certain app
 
