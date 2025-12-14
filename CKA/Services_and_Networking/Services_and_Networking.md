@@ -1,5 +1,7 @@
 # Services & Networking (20% Exam Weight)
 
+#### [YouTube video link](https://www.youtube.com/watch?v=2YiCiTKzbkM)
+
 Welcome back, Kubernetes learners! This session explores one of the most vital CKA domains: **Services & Networking**. We'll break down pod connectivity, network policies, Service types (including **ClusterIP**, **NodePort**, **LoadBalancer**), dive into the **Gateway API** and modern **Ingress**, deploy a gateway end to end, and wrap up with **CoreDNS** essentials.
 
 We will use this [playground](https://killercoda.com/playgrounds/scenario/kubernetes) throughout this session.
@@ -211,10 +213,22 @@ kubectl get deployment -n kube-system coredns
 **Test DNS from Pod:**
 
 ```sh
-kubectl exec -it busybox -- nslookup kubernetes.default
+kubectl exec -it busybox -- nslookup kubernetes.default.svc.cluster.local
 ```
 
 You can [configure stub domains, upstream servers](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/) and customize CoreDNS as needed.
+
+**Explore CoreDNS ConfigMap:**
+
+```sh
+kubectl -n kube-system get cm coredns -o yaml
+```
+
+**See `resolv.conf` in a contrainer**
+
+```sh
+kubectl exec -it busybox -- cat /etc/resolv.conf
+```
 
 ***
 

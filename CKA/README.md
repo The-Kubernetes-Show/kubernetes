@@ -55,15 +55,15 @@ This course outline is structured to align with the [CKA Curriculum v1.34](https
 |  | Use Helm and Kustomize to install cluster components | ✅ | ✅ |
 |  | Understand extension interfaces (CNI, CSI, CRI, etc.) | ✅ | ✅ |
 |  | Understand CRDs, install and configure operators | ✅ | ✅ |
-| 4. Services & Networking (20%) | Understand connectivity between Pods | ✅ [Link 1](Services_and_Networking/Services_and_Networking.md) | ✅ [Video - Nov 09, 2025](TBD) |
+| 4. Services & Networking (20%) | Understand connectivity between Pods | ✅ [Link 1](Services_and_Networking/Services_and_Networking.md) | ✅ [Video - Nov 09, 2025](https://www.youtube.com/watch?v=2YiCiTKzbkM) |
 |  | Define and enforce Network Policies | ✅ | ✅ |
 |  | Use ClusterIP, NodePort, LoadBalancer service types and endpoints | ✅ | ✅ |
 |  | Use the Gateway API to manage Ingress traffic | ✅ | ✅ |
 |  | Use Ingress controllers and Ingress resources | ✅ | ✅ |
 |  | Understand and use CoreDNS | ✅ | ✅ |
-| 5. Storage (10%) | Implement storage classes and dynamic volume provisioning | ⏳ | ⏳ |
-|  | Configure volume types, access modes and reclaim policies | ⏳ | ⏳ |
-|  | Manage persistent volumes and persistent volume claims | ⏳ | ⏳ |
+| 5. Storage (10%) | Implement storage classes and dynamic volume provisioning | ✅ [Link 1](Storage/storage-concepts.md) | ✅ [Video - Dec 14, 2025](TBD) |
+|  | Configure volume types, access modes and reclaim policies | ✅ | ✅ |
+|  | Manage persistent volumes and persistent volume claims | ✅ | ✅ |
 
 ---
 
