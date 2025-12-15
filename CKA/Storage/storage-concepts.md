@@ -1,6 +1,6 @@
 # 5. Storage (10%)
 
-#### [YouTube video link](TBD)
+#### [YouTube video link](https://www.youtube.com/watch?v=vfGzKQDKPWc)
 
 Welcome back, Kubernetes learners! This session explores one of the most real world used CKA domains: **Storage**. Kubernetes storage for the CKA comes down to three core building blocks you must be fast and fluent with in the exam: StorageClasses for dynamic provisioning, PersistentVolumes (PV) plus PersistentVolumeClaims (PVC), and how these connect into Pods via volumes and volumeMounts. This section gives you short explanations plus hands on labs you can run on any cluster, with homework at the end to lock in the skills.
 

@@ -61,7 +61,7 @@ This course outline is structured to align with the [CKA Curriculum v1.34](https
 |  | Use the Gateway API to manage Ingress traffic | ✅ | ✅ |
 |  | Use Ingress controllers and Ingress resources | ✅ | ✅ |
 |  | Understand and use CoreDNS | ✅ | ✅ |
-| 5. Storage (10%) | Implement storage classes and dynamic volume provisioning | ✅ [Link 1](Storage/storage-concepts.md) | ✅ [Video - Dec 14, 2025](TBD) |
+| 5. Storage (10%) | Implement storage classes and dynamic volume provisioning | ✅ [Link 1](Storage/storage-concepts.md) | ✅ [Video - Dec 14, 2025](https://www.youtube.com/watch?v=vfGzKQDKPWc) |
 |  | Configure volume types, access modes and reclaim policies | ✅ | ✅ |
 |  | Manage persistent volumes and persistent volume claims | ✅ | ✅ |
 
